@@ -1,0 +1,80 @@
+/* Heading style */
+.models h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+/* Series Button Style */
+.series-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.4em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.series-button:hover {
+    background-color: #005bb5;
+    transform: scale(1.02);
+}
+
+/* Model Links Section */
+.model-links {
+    display: none;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Model Item Card */
+.model-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    margin: 10px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.model-item:hover {
+    transform: scale(1.05);
+}
+
+/* Model Item Image */
+.model-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Model Item Link */
+.model-item a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.model-item a:hover {
+    color: #0073e6;
+}

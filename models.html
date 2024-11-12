@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Models</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/models.css">
+
+    <script src="./js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="./images/logo.png" alt="BMW Logo"></a>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="models.html">Models</a>
+            <a href="history.html">History</a>
+            <a href="community.html">Community</a>
+            <a href="gallery.html">Gallery</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="models">
+            <h1>Select a BMW Series</h1>
+
+            <!-- 1 Series -->
+            <button class="series-button" onclick="toggleModels('one-series')">1 Series</button>
+            <div class="model-links" id="one-series">
+                <div class="model-item"><img src="./images/1series/e81.png" alt="BMW E81"><a href="e81.html">E81</a></div>
+                <div class="model-item"><img src="./images/1series/e87.png" alt="BMW E87"><a href="e87.html">E87</a></div>
+                <div class="model-item"><img src="./images/1series/f20.png" alt="BMW F20"><a href="f20.html">F20</a></div>
+                <div class="model-item"><img src="./images/1series/f40.png" alt="BMW F40"><a href="f40.html">F40</a></div>
+            </div>
+
+            <!-- 2 Series -->
+            <button class="series-button" onclick="toggleModels('two-series')">2 Series</button>
+            <div class="model-links" id="two-series">
+                <div class="model-item"><img src="path/to/f22-image.jpg" alt="BMW F22"><a href="f22.html">F22</a></div>
+                <div class="model-item"><img src="path/to/f44-image.jpg" alt="BMW F44"><a href="f44.html">F44</a></div>
+                <div class="model-item"><img src="path/to/g42-image.jpg" alt="BMW G42"><a href="g42.html">G42</a></div>
+            </div>
+
+            <!-- 3 Series -->
+            <button class="series-button" onclick="toggleModels('three-series')">3 Series</button>
+            <div class="model-links" id="three-series">
+                <div class="model-item"><img src="path/to/e21-image.jpg" alt="BMW E21"><a href="e21.html">E21</a></div>
+                <div class="model-item"><img src="path/to/e30-image.jpg" alt="BMW E30"><a href="e30.html">E30</a></div>
+                <div class="model-item"><img src="path/to/e36-image.jpg" alt="BMW E36"><a href="e36.html">E36</a></div>
+                <div class="model-item"><img src="path/to/e46-image.jpg" alt="BMW E46"><a href="e46.html">E46</a></div>
+                <div class="model-item"><img src="path/to/e90-image.jpg" alt="BMW E90"><a href="e90.html">E90</a></div>
+                <div class="model-item"><img src="path/to/f30-image.jpg" alt="BMW F30"><a href="f30.html">F30</a></div>
+                <div class="model-item"><img src="path/to/g20-image.jpg" alt="BMW G20"><a href="g20.html">G20</a></div>
+            </div>
+
+            <!-- 4 Series -->
+            <button class="series-button" onclick="toggleModels('four-series')">4 Series</button>
+            <div class="model-links" id="four-series">
+                <div class="model-item"><img src="path/to/f32-image.jpg" alt="BMW F32"><a href="f32.html">F32</a></div>
+                <div class="model-item"><img src="path/to/f36-image.jpg" alt="BMW F36"><a href="f36.html">F36</a></div>
+                <div class="model-item"><img src="path/to/g22-image.jpg" alt="BMW G22"><a href="g22.html">G22</a></div>
+                <div class="model-item"><img src="path/to/g26-image.jpg" alt="BMW G26"><a href="g26.html">G26</a></div>
+            </div>
+
+            <!-- 5 Series -->
+            <button class="series-button" onclick="toggleModels('five-series')">5 Series</button>
+            <div class="model-links" id="five-series">
+                <div class="model-item"><img src="path/to/e12-image.jpg" alt="BMW E12"><a href="e12.html">E12</a></div>
+                <div class="model-item"><img src="path/to/e28-image.jpg" alt="BMW E28"><a href="e28.html">E28</a></div>
+                <div class="model-item"><img src="path/to/e34-image.jpg" alt="BMW E34"><a href="e34.html">E34</a></div>
+                <div class="model-item"><img src="path/to/e39-image.jpg" alt="BMW E39"><a href="e39.html">E39</a></div>
+                <div class="model-item"><img src="path/to/e60-image.jpg" alt="BMW E60"><a href="e60.html">E60</a></div>
+                <div class="model-item"><img src="path/to/f10-image.jpg" alt="BMW F10"><a href="f10.html">F10</a></div>
+                <div class="model-item"><img src="path/to/g30-image.jpg" alt="BMW G30"><a href="g30.html">G30</a></div>
+            </div>
+
+            <!-- Repeat similar structure for other series -->
+
+            <!-- X Series -->
+            <button class="series-button" onclick="toggleModels('x-series')">X Series</button>
+            <div class="model-links" id="x-series">
+                <div class="model-item"><img src="path/to/x1-image.jpg" alt="BMW X1"><a href="x1.html">X1</a></div>
+                <div class="model-item"><img src="path/to/x3-image.jpg" alt="BMW X3"><a href="x3.html">X3</a></div>
+                <div class="model-item"><img src="path/to/x5-image.jpg" alt="BMW X5"><a href="x5.html">X5</a></div>
+                <div class="model-item"><img src="path/to/x7-image.jpg" alt="BMW X7"><a href="x7.html">X7</a></div>
+            </div>
+
+            <!-- Z Series -->
+            <button class="series-button" onclick="toggleModels('z-series')">Z Series</button>
+            <div class="model-links" id="z-series">
+                <div class="model-item"><img src="path/to/z1-image.jpg" alt="BMW Z1"><a href="z1.html">Z1</a></div>
+                <div class="model-item"><img src="path/to/z3-image.jpg" alt="BMW Z3"><a href="z3.html">Z3</a></div>
+                <div class="model-item"><img src="path/to/z4-image.jpg" alt="BMW Z4"><a href="z4.html">Z4</a></div>
+                <div class="model-item"><img src="path/to/z8-image.jpg" alt="BMW Z8"><a href="z8.html">Z8</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 BMW Wiki. All rights reserved.</p>
+    </footer>
+</body>
+</html>
