@@ -14,17 +14,9 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Main Layout */
-header {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 2rem;
-}
 
 main {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 20px auto;
     padding: 20px;
     background: #fff;
@@ -66,8 +58,8 @@ p {
 
 /* Modifications Section */
 .mod-icon {
-    width: 30px; /* Adjusted size to make it smaller */
-    height: 30px; /* Adjusted size to make it smaller */
+    max-width: 150px; /* Adjusted size to make it smaller */
+    max-height: 150px; /* Adjusted size to make it smaller */
     margin-right: 10px; /* Keep spacing consistent */
     object-fit: contain; /* Ensures the image scales properly without distortion */
     border-radius: 4px; /* Optional: Adds a slight rounding for a polished look */
@@ -104,12 +96,6 @@ p {
     align-items: center;
 }
 
-.mod-icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-
 /* Image Gallery */
 .gallery-grid {
     display: grid;
@@ -128,15 +114,6 @@ p {
     transform: scale(1.05);
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #000;
-    color: #fff;
-    margin-top: 20px;
-    font-size: 0.9rem;
-}
 /* Table Styling */
 table.gains-table {
     width: 100%;
