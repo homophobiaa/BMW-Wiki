@@ -65,6 +65,14 @@ p {
 }
 
 /* Modifications Section */
+.mod-icon {
+    width: 30px; /* Adjusted size to make it smaller */
+    height: 30px; /* Adjusted size to make it smaller */
+    margin-right: 10px; /* Keep spacing consistent */
+    object-fit: contain; /* Ensures the image scales properly without distortion */
+    border-radius: 4px; /* Optional: Adds a slight rounding for a polished look */
+}
+
 .modifications-container {
     display: flex;
     gap: 30px;
