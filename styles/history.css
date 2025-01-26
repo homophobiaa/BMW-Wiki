@@ -1,15 +1,29 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Darken overlay */
+        url('../images/background4.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps background fixed */
+    min-height: 100vh; /* Ensures it spans at least the full viewport */
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
+    background-color: #000000;
 }
 
 .history {
     max-width: 900px;
     margin: 50px auto;
     padding: 30px;
-    background-color: #fff;
+    background-color: #0000005b;
     border-radius: 10px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -17,13 +31,13 @@ body {
 
 .history h1 {
     font-size: 2em;
-    color: #0073e6;
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
 .history p {
     font-size: 1.15em;
-    color: #555;
+    color: #fff6f6cc;
     margin-bottom: 40px;
     line-height: 1.6;
 }
@@ -41,7 +55,7 @@ body {
     flex-direction: row;
     align-items: flex-start;
     padding: 15px;
-    background-color: #f9f9f9;
+    background-color: #00000063;
     border-left: 6px solid #0073e6;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
@@ -49,7 +63,7 @@ body {
 }
 
 .timeline-item:hover {
-    background-color: #e6f0ff;
+    background-color: #000000;
     transform: translateX(5px);
 }
 
@@ -70,13 +84,13 @@ body {
 .timeline-content h2 {
     margin: 0;
     font-size: 1.4em;
-    color: #333;
+    color: #ffffffe7;
     font-weight: 600;
 }
 
 .timeline-content p {
     margin: 8px 0 0;
-    color: #555;
+    color: #ffffffb2;
     font-size: 1.1em;
     line-height: 1.6;
 }
