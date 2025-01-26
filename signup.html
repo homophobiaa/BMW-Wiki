@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - BMW Wiki Discussion</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/signup.css">
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="./images/logo.png" alt="BMW Logo"></a>
+        </div>
+        <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+            <defs>
+              <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
+            </defs>
+          </svg>
+          
+          <div class="navbar-container">
+            <a class="btn" href="index.html">Home
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+            </a>
+            <a class="btn" href="models.html">Models
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+            </a>
+            <a class="btn" href="history.html">History
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+            </a>
+            <a class="btn" href="community.html">Community
+                <svg class="button-stroke" viewBox="0 0 154 13">
+                  <use href="#line"></use>
+                </svg>
+                <svg class="button-stroke" viewBox="0 0 154 13">
+                  <use href="#line"></use>
+                </svg>
+              </a>
+              <a class="btn" href="gallery.html">Gallery
+                <svg class="button-stroke" viewBox="0 0 154 13">
+                  <use href="#line"></use>
+                </svg>
+                <svg class="button-stroke" viewBox="0 0 154 13">
+                  <use href="#line"></use>
+                </svg>
+              </a>
+              <a class="btn" href="contact.html">Contact
+                <svg class="button-stroke" viewBox="0 0 154 13">
+                  <use href="#line"></use>
+                </svg>
+                <svg class="button-stroke" viewBox="0 0 154 13">
+                  <use href="#line"></use>
+                </svg>
+              </a>
+          </div>
+    </header> 
+    <main>
+        <section class="signup-form-section">
+            <h2>Create an Account</h2>
+            <form action="submit_signup.php" method="POST" id="signup-form">
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <div>
+                    <label for="car-model">Your BMW Model (Optional)</label>
+                    <input type="text" id="car-model" name="car-model">
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 BMW Wiki. All rights reserved.</p>
+    </footer>
+</body>
+</html>

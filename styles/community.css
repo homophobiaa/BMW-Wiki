@@ -5,13 +5,34 @@ body {
     background-color: #f0f0f0;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Darken overlay */
+        url('../images/background2.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps background fixed */
+    min-height: 100vh; /* Ensures it spans at least the full viewport */
+}
+
 .community {
     max-width: 900px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #00000079;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+h2, a{
+    color: rgba(255, 255, 255, 0.877);
+}
+
+p, ul li{
+    color: #fffdfd91;
 }
 
 .community h1 {
@@ -34,6 +55,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 20px;
 }
 
 .join-community button:hover {
@@ -55,7 +77,7 @@ body {
 .discussion {
     margin-bottom: 20px;
     padding: 10px;
-    background-color: #f9f9f9;
+    background-color: #00000065;
     border-radius: 4px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -67,7 +89,7 @@ body {
 
 .discussion h3 a {
     text-decoration: none;
-    color: #333;
+    color: #c2c0c0;
     transition: color 0.3s;
 }
 
@@ -76,7 +98,7 @@ body {
 }
 
 .discussion p {
-    color: #555;
+    color: #818181;
     margin: 5px 0;
 }
 
@@ -96,7 +118,6 @@ body {
 
 .popular-resources ul li a {
     text-decoration: none;
-    color: #333;
     font-weight: bold;
     transition: color 0.3s;
 }

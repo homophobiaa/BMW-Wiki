@@ -39,7 +39,7 @@ header .logo img {
     background-image: url('path/to/hero-image.jpg');
     background-size: cover;
     background-position: center;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 100px 20px;
 }
@@ -59,7 +59,7 @@ main {
 .sidebar {
     width: 25%;
     padding: 20px;
-    background-color: #eaeaea;
+    background-color: #00000079;
     border-radius: 8px;
     margin-right: 20px;
 }
@@ -67,6 +67,7 @@ main {
 .sidebar h2 {
     font-family: 'Ferrari Sans', Arial, sans-serif;
     margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.877);
 }
 
 .sidebar ul {
@@ -75,7 +76,7 @@ main {
 
 .sidebar ul li a {
     text-decoration: none;
-    color: #333;
+    color: #fffdfd91;
 }
 
 .sidebar ul li a:hover {
@@ -85,14 +86,18 @@ main {
 .content {
     flex: 1;
     padding: 20px;
-    background-color: #fff;
+    background-color: #00000079;
     border-radius: 8px;
 }
 
 .content h2 {
     font-family: 'Ferrari Sans', Arial, sans-serif;
-    color: #1a1a1a;
+    color: rgba(255, 255, 255, 0.877);
     margin-bottom: 10px;
+}
+
+.content p {
+  color: #fffdfd91;
 }
 
 footer {
@@ -100,7 +105,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 15px 0;
-    margin-top: 20px;
+    margin-top: 190px;
 }
 
 footer p {

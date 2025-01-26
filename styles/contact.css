@@ -1,0 +1,134 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Darken overlay */
+        url('../images/background3.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps background fixed */
+    min-height: 100vh; /* Ensures it spans at least the full viewport */
+}
+/* Main content area */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 150px); /* Full height minus header and footer */
+    padding: 20px;
+}
+
+/* Contact form container */
+.contact-form-container {
+    background-color: #00000093;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form-container h2 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-size: 14px;
+    color: #ffffffb9;
+}
+
+input, textarea {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #0084ffb0;
+    background-color: rgba(0, 0, 0, 0.432);
+    border-radius: 6px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.685);
+}
+
+input:focus, textarea:focus {
+    border-color: #007BFF;
+    color: white;
+}
+
+/* Style the file input field */
+input[type="file"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    background-color: transparent;
+    color: #333; /* Text color for the file input */
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Hide the default file input button */
+input[type="file"]::-webkit-file-upload-button {
+    display: none;
+}
+
+/* Custom button styling */
+input[type="file"]::before {
+    content: "Choose file";
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #00aeff9a; /* Button background color */
+    color: white; /* Button text color */
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+/* Change the background color when hovering over the custom button */
+input[type="file"]:hover::before {
+    background-color: #0056b3; /* Darker background color on hover */
+}
+
+/* Change the background color when focused */
+input[type="file"]:focus::before {
+    background-color: #004085; /* Focused button background color */
+}
+
+
+button {
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

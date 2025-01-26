@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMW E81 | BMW Wiki</title>
-    <!-- Link to default model page styles -->
+
     <link rel="stylesheet" href="../../styles/defaultmodelpage.css">
     <link rel="stylesheet" href="../../styles/style.css">
 </head>
@@ -13,15 +13,55 @@
         <div class="logo">
             <a href="../../index.html"><img src="../../images/logo.png" alt="BMW Logo"></a>
         </div>
-        <nav class="navbar">
-            <a href="../../index.html">Home</a>
-            <a href="../../models.html">Models</a>
-            <a href="../../history.html">History</a>
-            <a href="../../community.html">Community</a>
-            <a href="../../gallery.html">Gallery</a>
-            <a href="#technical-info">Technical Info</a> <!-- New menu item -->
-        </nav>
-    </header>
+        <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+            <defs>
+              <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
+            </defs>
+          </svg>
+          
+          <div class="navbar-container">
+            <a class="btn" href="../../index.html">Home
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+            </a>
+            <a class="btn" href="../../models.html">Models
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+            </a>
+            <a class="btn" href="../../history.html">History
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+            </a>
+            <a class="btn" href="../../community.html">Community
+                <svg class="button-stroke" viewBox="0 0 154 13">
+                  <use href="#line"></use>
+                </svg>
+                <svg class="button-stroke" viewBox="0 0 154 13">
+                  <use href="#line"></use>
+                </svg>
+              </a>
+              <a class="btn" href="../../gallery.html">Gallery
+                <svg class="button-stroke" viewBox="0 0 154 13">
+                  <use href="#line"></use>
+                </svg>
+                <svg class="button-stroke" viewBox="0 0 154 13">
+                  <use href="#line"></use>
+                </svg>
+              </a>
+          </div>
+    </header> 
 
     <main class="car-page">
         <!-- Car Header Section -->
@@ -33,9 +73,9 @@
         <!-- Car Images and Specifications Section -->
         <section class="car-info">
             <div class="car-images">
-                <img src="../../images/1series/e81.png" alt="BMW E81 Front View">
-                <img src="../../images/1series/e81-side.png" alt="BMW E81 Side View">
-                <img src="../../images/1series/e81-interior.png" alt="BMW E81 Interior View">
+                <img src="../../images/1series/e81.png" alt="BMW E81 Front View" loading="lazy">
+                <img src="../../images/1series/e81-side.png" alt="BMW E81 Side View" loading="lazy">
+                <img src="../../images/1series/e81-interior.png" alt="BMW E81 Interior View" loading="lazy">
             </div>
 
             <div class="car-details">
@@ -67,12 +107,12 @@
         <section class="car-gallery">
             <h2>Image Gallery</h2>
             <div class="gallery-grid">
-                <img src="../../images/1series/e81.png" alt="BMW E81 Front">
-                <img src="../../images/1series/e81-2.png" alt="BMW E81 Rear">
-                <img src="../../images/1series/e81-3.png" alt="BMW E81 Side">
-                <img src="../../images/1series/e81-4.png" alt="BMW E81 Interior">
-                <img src="../../images/1series/e81-5.png" alt="BMW E81 Exterior Detail">
-                <img src="../../images/1series/e81-6.png" alt="BMW E81 in Action">
+                <img src="../../images/1series/e81.png" alt="BMW E81 Front" loading="lazy">
+                <img src="../../images/1series/e81-2.png" alt="BMW E81 Rear" loading="lazy">
+                <img src="../../images/1series/e81-3.png" alt="BMW E81 Side" loading="lazy">
+                <img src="../../images/1series/e81-4.png" alt="BMW E81 Interior" loading="lazy">
+                <img src="../../images/1series/e81-exterior.jpg" alt="BMW E81 Exterior Detail" loading="lazy">
+                <img src="../../images/1series/e81-in-action.jpg" alt="BMW E81 in Action" loading="lazy">
             </div>
         </section>
 

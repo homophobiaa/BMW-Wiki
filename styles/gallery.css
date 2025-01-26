@@ -1,3 +1,17 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Darken overlay */
+        url('../images/background6.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps background fixed */
+    min-height: 100vh; /* Ensures it spans at least the full viewport */
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,10 +20,10 @@ body {
 }
 
 .gallery {
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff00;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -28,14 +42,17 @@ body {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
     gap: 20px;
+    width:1600px;
 }
 
 .gallery-item {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
+    background-color: #ffffff00;
+    border: 0px solid #e0e0e0;
     border-radius: 8px;
+    width:400px;
+    height:250px;
     overflow: hidden;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
@@ -47,12 +64,13 @@ body {
 
 .gallery-item img {
     width: 100%;
+    width: 400px;
     height: auto;
     display: block;
 }
 
 .gallery-item p {
-    padding: 10px;
+    padding: 0px;
     font-weight: bold;
     color: #333;
     background-color: #f8f8f8;
