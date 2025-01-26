@@ -158,230 +158,230 @@ h1 {
     color: rgb(var(--col-fg-p3));
   }
   
-  /* PEN CONTENT STYLING */
-  
-  .content {
-    text-align: center;
-  }
-  
+ /* PEN CONTENT STYLING */
+
+.content {
+  text-align: center;
+}
+
+.content-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100vw;
+  place-items: center;
+  margin-top: 40px;
+}
+
+@media screen and (max-width:1600px) {
   .content-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 100vw;
-    place-items: center;
-    margin-top: 40px;
+    grid-template-columns: repeat(2,1fr);
   }
-  
-  @media screen and (max-width:1600px) {
-    .content-row {
-      grid-template-columns: repeat(4,1fr);
-    }
+}
+
+@media screen and (max-width:1000px) {
+  .content-row {
+    grid-template-columns: repeat(1,1fr);
   }
-  
-  @media screen and (max-width:1000px) {
-    .content-row {
-      grid-template-columns: repeat(1,1fr);
-    }
-  }
-  
-  .card {
-    max-height: 300px;
-    min-height: 300px;
-    aspect-ratio: 10 / 16;
-    position: relative;
-    border-radius: 2px;
-    transform-style: preserve-3d;
-    transition: rotate ease 400ms;
-    margin-bottom: 6vh;
-  }
-  
-  .card::before {
-    content: "";
-    border-radius: 2px;
-    position: absolute;
-    inset: 0;
-    z-index: 100;
-    background-image: radial-gradient(circle, transparent 10px, black);
-    opacity: 0;
-    transition: opacity 400ms;
-  }
-  
-  .card:hover::before {
-    opacity: 1;
-  }
-  
-  .card::after {
-    content: "";
-    border-radius: 2px;
-    position: absolute;
-    inset: 80% 0.5rem 0.5rem;
-    translate: 0;
-    transform: translateZ(-100px);
-    background: black;
-    filter: blur(1rem);
-    z-index: 1;
-    transition: rotate 300ms, translate 300ms;
-  }
-  
-  .card:hover::after {
-    rotate: x calc(35deg * -1);
-    translate: 0 60px;
-  }
-  
-  .card:hover {
-    rotate: x 35deg;
-  }
-  
-  .card:hover .content-row {
-    transform: perspective(900px);
-  }
-  
-  .background {
-    position: absolute;
-    z-index: 10;
-    height: 50%;
-    width: 50%;
-    object-fit: cover;
-    object-position: -350px center;
-  }
-  
-  .logo, .car, .title {
-    position: absolute;
-  }
-  
-  .car {
-    opacity: 0;
-    background-position: center;
-    transform-origin: bottom;
-    z-index: 100;
-    transition: 600ms;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
-  
-  .card:hover .car {
-    opacity: 1;
-    rotate: x calc(35deg * -1);
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -55%) translateZ(-10px);
-  }
-  
-  .m3 {
-    background-image: url("https://cdn.bmwblog.com/wp-content/uploads/2022/07/bmw-m3-touring-frozen-black-2022-15.jpg");
+}
+
+.card {
+  max-height: 500px;
+  min-height: 500px;
+  aspect-ratio: 10 / 16;
+  position: relative;
+  border-radius: 2px;
+  transform-style: preserve-3d;
+  transition: rotate ease 400ms;
+  margin-bottom: 6vh;
+}
+
+.card::before {
+  content: "";
+  border-radius: 2px;
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background-image: radial-gradient(circle, transparent 10px, black);
+  opacity: 0;
+  transition: opacity 400ms;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card::after {
+  content: "";
+  border-radius: 2px;
+  position: absolute;
+  inset: 80% 0.5rem 0.5rem;
+  translate: 0;
+  transform: translateZ(-100px);
+  background: black;
+  filter: blur(1rem);
+  z-index: 1;
+  transition: rotate 300ms, translate 300ms;
+}
+
+.card:hover::after {
+  rotate: x calc(35deg * -1);
+  translate: 0 60px;
+}
+
+.card:hover {
+  rotate: x 35deg;
+}
+
+.card:hover .content-row {
+  transform: perspective(900px);
+}
+
+.background {
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: -350px center;
+}
+
+.logo, .car, .title {
+  position: absolute;
+}
+
+.car {
+  opacity: 0;
+  background-position: center;
+  transform-origin: bottom;
+  z-index: 100;
+  transition: 600ms;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.card:hover .car {
+  opacity: 1;
+  rotate: x calc(35deg * -1);
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -55%) translateZ(-10px);
+}
+
+.m3 {
+  background-image: url("https://cdn.bmwblog.com/wp-content/uploads/2022/07/bmw-m3-touring-frozen-black-2022-15.jpg");
+  background-size: cover;
+  background-position: -200px center;
+}
+
+.m4 {
+  background-image: url("https://www.autovisie.nl/wp-content/uploads/2022/05/P90461724_highRes_the-new-bmw-m4-csl-o.jpg");
+  background-size: cover;
+  background-position: -250px center;
+}
+
+.m5 {
+  background-image: url("https://g90.bimmerpost.com/forums/attachment.php?attachmentid=3587969&stc=1&d=1730220532");
+  background-size: cover;
+  background-position: -350px center;
+}
+
+.m3 .car {
+  height: 380px;
+  aspect-ratio: 16 / 10;
+  background-image: url("https://www.bmw.be/content/dam/bmw/common/all-models/m-series/m3-touring/2022/navigation/bmw-m3-competition-touring-modelfinder.png");
     background-size: cover;
-    background-position: -200px center;
-  }
-  
-  .m4 {
-    background-image: url("https://www.autovisie.nl/wp-content/uploads/2022/05/P90461724_highRes_the-new-bmw-m4-csl-o.jpg");
+}
+
+.m4 .car {
+  height: 400px;
+  aspect-ratio: 16 / 10;
+  background-image: url("https://www.bmw.nl/content/dam/bmw/common/all-models/m-series/m4-coupe/2022/Navigation/bmw-4-series-coupe-m-csl-modelfinder.png");
     background-size: cover;
-    background-position: -250px center;
-  }
-  
-  .m8 {
-    background-image: url("https://w0.peakpx.com/wallpaper/327/234/HD-wallpaper-2023-bmw-m8-competition-8-series-convertible-coupe-gran-coupe-turbo-v8-car.jpg");
-    background-size: cover;
-    background-position: -300px center;
-  }
-  
-  .m3 .car {
-    height: 380px;
-    aspect-ratio: 16 / 10;
-    background-image: url("https://www.bmw.be/content/dam/bmw/common/all-models/m-series/m3-touring/2022/navigation/bmw-m3-competition-touring-modelfinder.png");
-      background-size: cover;
-  }
-  
-  .m4 .car {
-    height: 400px;
-    aspect-ratio: 16 / 10;
-    background-image: url("https://www.bmw.nl/content/dam/bmw/common/all-models/m-series/m4-coupe/2022/Navigation/bmw-4-series-coupe-m-csl-modelfinder.png");
-      background-size: cover;
-  }
-  
-  .m8 .car {
-    height: 370px;
-    aspect-ratio: 16 / 10;
-    background-image: url("https://www.bmw.be/content/dam/bmw/common/all-models/m-series/m8-convertible/2022/navigation/bmw-modelfinder-stage2-890x501.png");
-    background-size: cover;
-  }
-  
-  .card:hover .spec-container {
-    opacity: 1;
-    transition: 300ms;
-    transition-delay: 700ms;
-  }
-  
-  .card:hover .logo {
-    transform: translateY(-2.5rem) translateZ(20px);
-    rotate: x calc(35deg * -1);
-    transition: 300ms;
-    transition-delay: 400ms;
-  }
-  
-  .title {
-    z-index: 1000;
-    width: 65%;
-    margin-inline: auto;
-    inset: auto 0 1rem;
-    transform: translateY(0rem) translateZ(20px);
-    transition: 600ms;
-  }
-  
-  .card:hover .title {
-    transform: translateY(-1.5rem) translateZ(20px);
-    rotate: x calc(35deg * -1);
-  }
-  
-  .title h1 {
-    font-weight: 400;
-    letter-spacing: 4px;
-    font-size: 30px;
-    transition: 200ms ease;
-  }
-  
-  .card:hover .title h1 {
-    font-size: 33px;
-  }
-  
-  .title p, .title h1 {
-    margin: 0;
-    padding: 0;
-    color: white;
-  }
-  
-  .spec-container {
-    position: absolute;
-    z-index: 1000;
-    bottom: -15%;
-    right: -120%;
-    transform: translate(-50%, -50%);
-    rotate: x calc(35deg * -1);
-    transition: 100ms;
-    transition-delay: 0;
-    opacity: 0;
-  }
-  
-  .spec-container div svg path {
-    fill: rgb(0, 0, 0);
-  }
-  
-  .spec-container div svg {
-    height: 40px;
-    width: min-content;
-  }
-  
-  .transmission, .acceleration, .gasoline {
-    display: flex;
-    align-items: center;
-  }
-  
-  .transmission p, .acceleration p, .gasoline p {
-    width: 100px;
-    text-align: left;
-    color: rgb(0, 0, 0);
-    margin: 0;
-    font-weight: 100;
-  }
+}
+
+.m5 .car {
+  height: 370px;
+  aspect-ratio: 16 / 10;
+  background-image: url("../images/Mseries/bmwm5g90.png");
+  background-size: cover;
+}
+
+.card:hover .spec-container {
+  opacity: 1;
+  transition: 300ms;
+  transition-delay: 300ms;
+}
+
+.card:hover .logo {
+  transform: translateY(-2.5rem) translateZ(20px);
+  rotate: x calc(35deg * -1);
+  transition: 300ms;
+  transition-delay: 400ms;
+}
+
+.title {
+  z-index: 1000;
+  width: 65%;
+  margin-inline: auto;
+  inset: auto 0 1rem;
+  transform: translateY(0rem) translateZ(20px);
+  transition: 600ms;
+}
+
+.card:hover .title {
+  transform: translateY(-1.5rem) translateZ(20px);
+  rotate: x calc(35deg * -1);
+}
+
+.title h1 {
+  font-weight: 400;
+  letter-spacing: 4px;
+  font-size: 30px;
+  transition: 200ms ease;
+}
+
+.card:hover .title h1 {
+  font-size: 33px;
+}
+
+.title p, .title h1 {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.spec-container {
+  position: absolute;
+  z-index: 1000;
+  bottom: -15%;
+  right: -120%;
+  transform: translate(-50%, -50%);
+  rotate: x calc(35deg * -1);
+  transition: 100ms;
+  transition-delay: 0;
+  opacity: 0;
+}
+
+.spec-container div svg path {
+  fill: rgb(0, 0, 0);
+}
+
+.spec-container div svg {
+  height: 40px;
+  width: min-content;
+}
+
+.transmission, .acceleration, .gasoline {
+  display: flex;
+  align-items: center;
+}
+
+.transmission p, .acceleration p, .gasoline p {
+  width: 100px;
+  text-align: left;
+  color: rgb(0, 0, 0);
+  margin: 0;
+  font-weight: 100;
+}
