@@ -4,17 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - BMW Wiki Discussion</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/contact.css">
+
 </head>
 <body>
     <header>
-        <h1>BMW Wiki Discussion</h1>
-        <p>Contact Us</p>
-    </header>
+        <div class="logo">
+            <a href="index.html"><img src="./images/logo.png" alt="BMW Logo"></a>
+        </div>
+        <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+            <defs>
+              <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
+            </defs>
+          </svg>
+          
+          <div class="navbar-container">
+            <a class="btn" href="index.html">Home
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+            </a>
+            <a class="btn" href="models.html">Models
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+            </a>
+            <a class="btn" href="history.html">History
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+            </a>
+            <a class="btn" href="community.html">Community
+                <svg class="button-stroke" viewBox="0 0 154 13">
+                  <use href="#line"></use>
+                </svg>
+                <svg class="button-stroke" viewBox="0 0 154 13">
+                  <use href="#line"></use>
+                </svg>
+              </a>
+              <a class="btn" href="gallery.html">Gallery
+                <svg class="button-stroke" viewBox="0 0 154 13">
+                  <use href="#line"></use>
+                </svg>
+                <svg class="button-stroke" viewBox="0 0 154 13">
+                  <use href="#line"></use>
+                </svg>
+              </a>
+              <a class="btn" href="contact.html">Contact
+                <svg class="button-stroke" viewBox="0 0 154 13">
+                  <use href="#line"></use>
+                </svg>
+                <svg class="button-stroke" viewBox="0 0 154 13">
+                  <use href="#line"></use>
+                </svg>
+              </a>
+          </div>
+    </header> 
     <main>
-        <section>
+        <section class="contact-form-container">
             <h2>Get in Touch</h2>
-            <form action="https://formspree.io/f/maykwvbb" method="POST" id="contact-form">
+            <form action="https://formspree.io/f/maykwvbb" method="POST" enctype="multipart/form-data" id="contact-form">
                 <div>
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" required>
@@ -27,12 +86,17 @@
                     <label for="message">Your Message</label>
                     <textarea id="message" name="message" rows="4" required></textarea>
                 </div>
+                <!-- File Upload Field -->
+                <div>
+                    <label for="file">Upload a File</label>
+                    <input type="file" id="file" name="file">
+                </div>
                 <button type="submit">Send Message</button>
             </form>
         </section>
     </main>
     <footer>
-        <p>Already have an account? <a href="login.html">Log In</a></p>
+        <p>&copy; 2024 BMW Wiki. All rights reserved.</p>
     </footer>
 </body>
 </html>
