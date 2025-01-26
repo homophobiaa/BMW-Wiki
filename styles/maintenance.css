@@ -1,0 +1,241 @@
+/* General Reset and Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Header Styling */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1e1e1e;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-bottom: 190px;
+}
+
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 28px;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    width: 100%;  /* Ensures full width */
+    display: inline-block; /* Fixes alignment with surrounding content */
+}
+
+/* Intro Text */
+.intro{
+    margin-left: 20px;
+    max-height: 500px;
+    min-width: 450px;
+    position: relative;
+    left: -330px; /* Adjust this value to shift it to the left */
+}
+
+.intro p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Maintenance Schedule */
+.maintenance-schedule{
+    margin-left: 50px;
+    max-height: 500px;
+    min-width: 450px;
+    position: relative;
+    left: -330px; /* Adjust this value to shift it to the left */
+}
+.maintenance-schedule table {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Reduced height */
+    border-collapse: collapse;
+    
+}
+
+.maintenance-schedule th, .maintenance-schedule td {
+    padding: 8px 15px; /* Reduced padding for compactness */
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.maintenance-schedule th {
+    background-color: #333;
+    color: #fff;
+}
+
+.maintenance-schedule tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.maintenance-schedule tr:hover {
+    background-color: #e2e2e2;
+}
+
+/* Maintenance Tips */
+.maintenance-tips{
+    margin-left: 50px;
+    max-height: 500px;
+    min-width: 350px;
+    position: relative;
+    left: -330px; /* Adjust this value to shift it to the left */
+}
+.maintenance-tips ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.maintenance-tips li {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.maintenance-tips strong {
+    color: #d4af37;
+}
+
+/* Service Recommendations */
+.service-recommendations{
+    margin-left: 50px;
+    max-height: 500px;
+    min-width: 350px;
+    position: relative;
+    left: -330px; /* Adjust this value to shift it to the left */
+}
+.service-recommendations{
+    margin-left: 20px;
+
+}
+.service-recommendations ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.service-recommendations li {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.service-recommendations li:before {
+    content: "✔";
+    color: #d4af37;
+    margin-right: 10px;
+}
+
+/* Buttons and Links */
+button, a.button {
+    background-color: #d4af37;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, a.button:hover {
+    background-color: #b38c2b;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    main {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .maintenance-schedule th, .maintenance-schedule td {
+        padding: 10px 15px;
+    }
+
+    .maintenance-tips, .service-recommendations {
+        padding-left: 20px;
+    }
+}
