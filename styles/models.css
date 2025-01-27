@@ -183,14 +183,15 @@ h1 {
 .content-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 100vw;
+  width: 1400px;
   place-items: center;
   margin-top: 40px;
+  gap: -100px;
 }
 
 @media screen and (max-width:1600px) {
   .content-row {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
   }
 }
 
@@ -209,6 +210,7 @@ h1 {
   transform-style: preserve-3d;
   transition: rotate ease 400ms;
   margin-bottom: 6vh;
+
 }
 
 .card::before {
@@ -288,7 +290,7 @@ h1 {
 .m3 {
   background-image: url("https://cdn.bmwblog.com/wp-content/uploads/2022/07/bmw-m3-touring-frozen-black-2022-15.jpg");
   background-size: cover;
-  background-position: -200px center;
+  background-position: -220px center;
 }
 
 .m4 {
@@ -381,7 +383,7 @@ h1 {
 }
 
 .spec-container div svg path {
-  fill: rgb(0, 0, 0);
+  fill: rgb(255, 255, 255);
 }
 
 .spec-container div svg {
@@ -397,7 +399,7 @@ h1 {
 .transmission p, .acceleration p, .gasoline p {
   width: 100px;
   text-align: left;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   margin: 0;
   font-weight: 100;
 }
