@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/community.css">
     <link rel="icon" type="image/png" href="./images/favicon-16x16.png">
-
 </head>
 <body>
     <header>
@@ -74,6 +73,29 @@
 
     <main>
         <section class="community">
+          <div class="fanbuilds-container">
+            <h2>Share Your BMW Build</h2>
+            
+            <form class="fanbuild-form" id="fanbuildForm">
+              <input type="text" id="username" placeholder="Your Name" required>
+              <input type="text" id="carModel" placeholder="BMW Model (e.g. E46 330i)" required>
+              <textarea id="mods" placeholder="List your modifications..." required></textarea>
+              <input type="number" id="totalPrice" placeholder="Total Cost (лв)" required>
+              <input type="number" id="hpGains" placeholder="HP Gains (Optional)">
+              <input type="text" id="imageUrl" placeholder="Image URL (Optional)">
+              <button type="submit">Submit Build</button>
+            </form>
+          
+            <div class="fanbuilds-list" id="fanbuildsList">
+              <!-- Builds will appear here -->
+            </div>
+            <script src="js/fanbuilds.js"></script>
+          </div>
+          
+
+
+
+
             <h1>Welcome to the BMW Community</h1>
             <p>Join the BMW community to connect with enthusiasts, share your experiences, and learn more about BMW.</p>
             

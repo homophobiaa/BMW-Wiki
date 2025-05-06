@@ -125,3 +125,118 @@ p, ul li{
 .popular-resources ul li a:hover {
     color: #0073e6;
 }
+
+
+
+
+/* === FAN BUILDS SECTION === */
+.fanbuilds-container {
+    margin-top: 40px;
+    background-color: #00000079;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fanbuilds-container h2 {
+    text-align: center;
+    color: #0073e6;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+.fanbuild-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.fanbuild-form input,
+.fanbuild-form textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    outline: none;
+}
+
+.fanbuild-form input::placeholder,
+.fanbuild-form textarea::placeholder {
+    color: #888;
+}
+
+.fanbuild-form button {
+    padding: 10px;
+    font-size: 1em;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.fanbuild-form button:hover {
+    background-color: #005bb5;
+}
+
+/* Fan build card */
+.fanbuilds-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.fanbuild-card {
+    background-color: #00000065;
+    color: #fffdfd91;
+    border-radius: 8px;
+    padding: 15px;
+    width: 280px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.fanbuild-card h3 {
+    color: #0073e6;
+    margin-top: 0;
+}
+
+.fanbuild-card p {
+    margin: 5px 0;
+    color: #d1d1d1;
+}
+
+.fanbuild-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+    object-fit: cover;
+    height: 160px;
+}
+
+.fanbuild-card .card-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.fanbuild-card .card-buttons button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 6px;
+    background-color: #444;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.fanbuild-card .card-buttons button:hover {
+    background-color: #0073e6;
+}
+
