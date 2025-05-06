@@ -85,6 +85,7 @@
         <button onclick="window.location.href='signup.html'">Join Now</button>
       </div>
 
+      <!-- BUILDS SECTION -->
       <div class="fanbuilds-container">
         <h2>Share Your BMW Build</h2>
 
@@ -94,6 +95,14 @@
           <textarea id="mods" placeholder="List your modifications..." required></textarea>
           <input type="number" id="totalPrice" placeholder="Total Cost (лв)" required>
           <input type="number" id="hpGains" placeholder="HP Gains (Optional)">
+          <select id="buildType" required>
+            <option value="" disabled selected>Select Build Type</option>
+            <option value="Stance">Stance</option>
+            <option value="Track">Track</option>
+            <option value="Drift">Drift</option>
+            <option value="Daily">Daily</option>
+            <option value="Showcar">Showcar</option>
+          </select>
           <input type="text" id="imageUrl" placeholder="Image URL (Optional)">
           <button type="submit">Submit Build</button>
           <small style="color: #aaa;">
@@ -108,6 +117,45 @@
         </div>
         <script src="js/fanbuilds.js"></script>
       </div>
+
+      <div id="editModal" class="modal">
+        <div class="modal-content">
+          <button type="button" id="closeModal">&times;</button>
+          <h2>Edit Build</h2>
+          <form id="editForm">
+            <label for="editUsername">Your Name</label>
+            <input type="text" id="editUsername" required>
+
+            <label for="editCarModel">BMW Model</label>
+            <input type="text" id="editCarModel" required>
+
+            <label for="editMods">Modifications</label>
+            <textarea id="editMods" required></textarea>
+
+            <label for="editTotalPrice">Total Cost (лв)</label>
+            <input type="number" id="editTotalPrice" required>
+
+            <label for="editHpGains">HP Gains (Optional)</label>
+            <input type="number" id="editHpGains">
+
+            <label for="editBuildType">Build Type</label>
+            <select id="editBuildType" required>
+              <option value="Stance">Stance</option>
+              <option value="Track">Track</option>
+              <option value="Drift">Drift</option>
+              <option value="Daily">Daily</option>
+              <option value="Showcar">Showcar</option>
+            </select>
+
+            <label for="editImageUrl">Image URL (Optional)</label>
+            <input type="text" id="editImageUrl">
+
+            <button type="submit">Save Changes</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- END OF BUILDS SECTION -->
 
       <div class="recent-discussions">
         <h2>Recent Discussions</h2>

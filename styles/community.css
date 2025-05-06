@@ -161,7 +161,9 @@ ul li {
 }
 
 .fanbuild-form input,
-.fanbuild-form textarea {
+.fanbuild-form textarea,
+.fanbuild-form select
+ {
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -171,8 +173,13 @@ ul li {
 }
 
 .fanbuild-form input::placeholder,
-.fanbuild-form textarea::placeholder {
+.fanbuild-form textarea::placeholder
+{
     color: #888;
+}
+
+.fanbuild-form select:invalid{
+    color: #d8d8d8;
 }
 
 .fanbuild-form button {
@@ -247,3 +254,83 @@ ul li {
 .fanbuild-card .card-buttons button:hover {
     background-color: #0073e6;
 }
+
+/* Modal Overlay */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 999; /* Make sure it's on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Scroll if needed */
+    background-color: rgba(0, 0, 0, 0.6); /* Dim background */
+  }
+  
+  /* Modal Content Box */
+  .modal-content {
+    background-color: #1c1c1c;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* Close Button */
+  .modal-content button[type="button"] {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .modal-content button[type="button"]:hover {
+    background: #666;
+  }
+  
+  /* Inputs inside modal */
+  #editModal input,
+  #editModal textarea,
+  #editModal select {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background: #2b2b2b;
+    color: white;
+  }
+  
+  #editModal button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #00aaff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  #editModal button[type="submit"]:hover {
+    background-color: #008fcc;
+  }
+  
+  /* Fade animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
