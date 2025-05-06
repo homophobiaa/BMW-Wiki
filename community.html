@@ -1,120 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMW Community</title>
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/community.css">
-    <link rel="icon" type="image/png" href="./images/favicon-16x16.png">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW Community</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/community.css">
+  <link rel="icon" type="image/png" href="./images/favicon-16x16.png">
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html"><img src="./images/logo.png" alt="BMW Logo"></a>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="./images/logo.png" alt="BMW Logo"></a>
+    </div>
+    <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+      <defs>
+        <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none"
+          stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
+      </defs>
+    </svg>
+
+    <div class="navbar-container">
+      <a class="btn" href="index.html">Home
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
+        </svg>
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
+        </svg>
+      </a>
+      <a class="btn" href="models.html">Models
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
+        </svg>
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
+        </svg>
+      </a>
+      <a class="btn" href="history.html">History
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
+        </svg>
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
+        </svg>
+      </a>
+      <a class="btn" href="community.html">Community
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
+        </svg>
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
+        </svg>
+      </a>
+      <a class="btn" href="gallery.html">Gallery
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
+        </svg>
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
+        </svg>
+      </a>
+      <a class="btn" href="contact.html">Contact
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
+        </svg>
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="community">
+      <h1>Welcome to the BMW Community</h1>
+      <p>Join the BMW community to connect with enthusiasts, share your experiences, and learn more about BMW.</p>
+
+      <div class="join-community">
+        <h2>Join the Community</h2>
+        <p>Sign up for exclusive access to BMW news, events, and community forums.</p>
+        <button onclick="window.location.href='signup.html'">Join Now</button>
+      </div>
+
+      <!-- BUILDS SECTION -->
+      <div class="fanbuilds-container">
+        <h2>Share Your BMW Build</h2>
+
+        <form class="fanbuild-form" id="fanbuildForm">
+          <input type="text" id="username" placeholder="Your Name" required>
+          <input type="text" id="carModel" placeholder="BMW Model (e.g. E46 330i)" required>
+          <textarea id="mods" placeholder="List your modifications..." required></textarea>
+          <input type="number" id="totalPrice" placeholder="Total Cost (лв)" required>
+          <input type="number" id="hpGains" placeholder="HP Gains (Optional)">
+          <select id="buildType" required>
+            <option value="" disabled selected>Select Build Type</option>
+            <option value="Stance">Stance</option>
+            <option value="Track">Track</option>
+            <option value="Drift">Drift</option>
+            <option value="Daily">Daily</option>
+            <option value="Showcar">Showcar</option>
+          </select>
+          <input type="text" id="imageUrl" placeholder="Image URL (Optional)">
+          <button type="submit">Submit Build</button>
+          <small style="color: #aaa;">
+            Upload your image to <a href="https://postimages.org/" target="_blank"
+              style="color:#00aaff;">postimages.org</a> or <a href="https://imgbb.com/" target="_blank"
+              style="color:#00aaff;">imgbb.com</a>, then paste the "Direct Link" (must end in .jpg or .png).
+          </small>
+        </form>
+
+        <div class="fanbuilds-list" id="fanbuildsList">
+          <!-- Builds will appear here -->
         </div>
-        <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
-            <defs>
-              <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
-            </defs>
-          </svg>
-          
-          <div class="navbar-container">
-            <a class="btn" href="index.html">Home
-              <svg class="button-stroke" viewBox="0 0 154 13">
-                <use href="#line"></use>
-              </svg>
-              <svg class="button-stroke" viewBox="0 0 154 13">
-                <use href="#line"></use>
-              </svg>
-            </a>
-            <a class="btn" href="models.html">Models
-              <svg class="button-stroke" viewBox="0 0 154 13">
-                <use href="#line"></use>
-              </svg>
-              <svg class="button-stroke" viewBox="0 0 154 13">
-                <use href="#line"></use>
-              </svg>
-            </a>
-            <a class="btn" href="history.html">History
-              <svg class="button-stroke" viewBox="0 0 154 13">
-                <use href="#line"></use>
-              </svg>
-              <svg class="button-stroke" viewBox="0 0 154 13">
-                <use href="#line"></use>
-              </svg>
-            </a>
-            <a class="btn" href="community.html">Community
-                <svg class="button-stroke" viewBox="0 0 154 13">
-                  <use href="#line"></use>
-                </svg>
-                <svg class="button-stroke" viewBox="0 0 154 13">
-                  <use href="#line"></use>
-                </svg>
-              </a>
-              <a class="btn" href="gallery.html">Gallery
-                <svg class="button-stroke" viewBox="0 0 154 13">
-                  <use href="#line"></use>
-                </svg>
-                <svg class="button-stroke" viewBox="0 0 154 13">
-                  <use href="#line"></use>
-                </svg>
-              </a>
-              <a class="btn" href="contact.html">Contact
-                <svg class="button-stroke" viewBox="0 0 154 13">
-                  <use href="#line"></use>
-                </svg>
-                <svg class="button-stroke" viewBox="0 0 154 13">
-                  <use href="#line"></use>
-                </svg>
-              </a>
-          </div>
-    </header> 
+        <script src="js/fanbuilds.js"></script>
+      </div>
 
-    <main>
-        <section class="community">
-            <h1>Welcome to the BMW Community</h1>
-            <p>Join the BMW community to connect with enthusiasts, share your experiences, and learn more about BMW.</p>
-            
-            <div class="join-community">
-                <h2>Join the Community</h2>
-                <p>Sign up for exclusive access to BMW news, events, and community forums.</p>
-                <button onclick="window.location.href='signup.html'">Join Now</button>
-            </div>
+      <div id="editModal" class="modal">
+        <div class="modal-content">
+          <button type="button" id="closeModal">&times;</button>
+          <h2>Edit Build</h2>
+          <form id="editForm">
+            <label for="editUsername">Your Name</label>
+            <input type="text" id="editUsername" required>
 
-            <div class="recent-discussions">
-                <h2>Recent Discussions</h2>
-                <div class="discussion">
-                    <h3><a href="discussion1.html">BMW E30 Restoration Tips</a></h3>
-                    <p>Share your experience with restoring the classic E30! Discuss parts, upgrades, and maintenance.</p>
-                    <span>Posted by User123 on Oct 28, 2024</span>
-                </div>
-                <div class="discussion">
-                    <h3><a href="discussion2.html">Best Upgrades for the F30 3 Series</a></h3>
-                    <p>Looking to enhance your F30’s performance? Join the discussion for tips on tuning and modifications.</p>
-                    <span>Posted by SpeedyF30 on Oct 25, 2024</span>
-                </div>
-                <div class="discussion">
-                    <h3><a href="discussion3.html">Favorite BMW Road Trip Routes</a></h3>
-                    <p>Share and discover the best road trips for BMW drivers worldwide.</p>
-                    <span>Posted by RoadWarrior on Oct 22, 2024</span>
-                </div>
-            </div>
+            <label for="editCarModel">BMW Model</label>
+            <input type="text" id="editCarModel" required>
 
-            <div class="popular-resources">
-                <h2>Popular Resources</h2>
-                <ul>
-                    <li><a href="maintenance.html">BMW Maintenance Guide</a> - Tips and schedules for keeping your BMW in top shape.</li>
-                    <li><a href="tuning.html">Tuning & Performance</a> - Explore performance upgrades and tuning advice for various BMW models.</li>
-                    <li><a href="events.html">Events & Meetups</a> - Find BMW events, meetups, and shows happening near you.</li>
-                    <li><a href="clubs.html">BMW Car Clubs</a> - Join BMW clubs in your region to connect with other BMW enthusiasts.</li>
-                </ul>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 BMW Wiki. All rights reserved.</p>
-    </footer>
+            <label for="editMods">Modifications</label>
+            <textarea id="editMods" required></textarea>
+
+            <label for="editTotalPrice">Total Cost (лв)</label>
+            <input type="number" id="editTotalPrice" required>
+
+            <label for="editHpGains">HP Gains (Optional)</label>
+            <input type="number" id="editHpGains">
+
+            <label for="editBuildType">Build Type</label>
+            <select id="editBuildType" required>
+              <option value="Stance">Stance</option>
+              <option value="Track">Track</option>
+              <option value="Drift">Drift</option>
+              <option value="Daily">Daily</option>
+              <option value="Showcar">Showcar</option>
+            </select>
+
+            <label for="editImageUrl">Image URL (Optional)</label>
+            <input type="text" id="editImageUrl">
+
+            <button type="submit">Save Changes</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- END OF BUILDS SECTION -->
+
+      <div class="recent-discussions">
+        <h2>Recent Discussions</h2>
+        <div class="discussion">
+          <h3><a href="discussion1.html">BMW E30 Restoration Tips</a></h3>
+          <p>Share your experience with restoring the classic E30! Discuss parts, upgrades, and maintenance.</p>
+          <span>Posted by User123 on Oct 28, 2024</span>
+        </div>
+        <div class="discussion">
+          <h3><a href="discussion2.html">Best Upgrades for the F30 3 Series</a></h3>
+          <p>Looking to enhance your F30’s performance? Join the discussion for tips on tuning and modifications.</p>
+          <span>Posted by SpeedyF30 on Oct 25, 2024</span>
+        </div>
+        <div class="discussion">
+          <h3><a href="discussion3.html">Favorite BMW Road Trip Routes</a></h3>
+          <p>Share and discover the best road trips for BMW drivers worldwide.</p>
+          <span>Posted by RoadWarrior on Oct 22, 2024</span>
+        </div>
+      </div>
+
+      <div class="popular-resources">
+        <h2>Popular Resources</h2>
+        <ul>
+          <li><a href="maintenance.html">BMW Maintenance Guide</a> - Tips and schedules for keeping your BMW in top
+            shape.</li>
+          <li><a href="tuning.html">Tuning & Performance</a> - Explore performance upgrades and tuning advice for
+            various BMW models.</li>
+          <li><a href="events.html">Events & Meetups</a> - Find BMW events, meetups, and shows happening near you.</li>
+          <li><a href="clubs.html">BMW Car Clubs</a> - Join BMW clubs in your region to connect with other BMW
+            enthusiasts.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 BMW Wiki. All rights reserved.</p>
+  </footer>
 </body>
+
 </html>
