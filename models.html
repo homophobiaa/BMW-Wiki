@@ -1,589 +1,506 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BMW Models</title>
-  <link rel="stylesheet" href="./styles/style.css">
-  <link rel="stylesheet" href="./styles/models.css">
-  <script src="./js/script.js" defer></script>
-  <link rel="icon" type="image/png" href="./images/favicon-16x16.png">
-
-  <script type="module">
-    // Import required SDKs
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
-    import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-storage.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
-
-    // Firebase config (your values)
-    const firebaseConfig = {
-      apiKey: "AIzaSyAHJOWe9ZmuHdHN2bQy5TDBB47_wRxZh10",
-      authDomain: "bmw-wiki.firebaseapp.com",
-      projectId: "bmw-wiki",
-      storageBucket: "bmw-wiki.appspot.com", // ✅ Fixed
-      messagingSenderId: "975682860201",
-      appId: "1:975682860201:web:8bf4538e3fc03a253165b8",
-      measurementId: "G-824J7F0JGS"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    const db = getFirestore(app);
-    const storage = getStorage(app);
-
-    // Example: Fetch and display all BMW models
-    const modelsContainer = document.getElementById("models-container");
-
-    const snapshot = await getDocs(collection(db, "bmw_models"));
-    for (const doc of snapshot.docs) {
-      const data = doc.data();
-      const imgRef = ref(storage, "bmw/" + data.image_main);
-      const imgUrl = await getDownloadURL(imgRef);
-
-      const div = document.createElement("div");
-      div.innerHTML = `
-        <h2>${data.model} (${data.generation})</h2>
-        <img src="${imgUrl}" width="300">
-        <p><strong>Engine:</strong> ${data.engine_code}</p>
-        <p><strong>Years:</strong> ${data.years}</p>
-      `;
-      modelsContainer.appendChild(div);
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Models</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/models.css">
+    <script src="./js/script.js" defer></script>
+    <link rel="icon" type="image/png" href="./images/favicon-16x16.png">
 
 </head>
-
 <body>
   <header>
     <div class="logo">
-      <a href="index.html"><img src="./images/logo.png" alt="BMW Logo"></a>
+        <a href="index.html"><img src="./images/logo.png" alt="BMW Logo"></a>
     </div>
     <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
-      <defs>
-        <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none"
-          stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
-      </defs>
-    </svg>
+        <defs>
+          <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
+        </defs>
+      </svg>
+      
+      <div class="navbar-container">
+        <a class="btn" href="index.html">Home
+          <svg class="button-stroke" viewBox="0 0 154 13">
+            <use href="#line"></use>
+          </svg>
+          <svg class="button-stroke" viewBox="0 0 154 13">
+            <use href="#line"></use>
+          </svg>
+        </a>
+        <a class="btn" href="models.html">Models
+          <svg class="button-stroke" viewBox="0 0 154 13">
+            <use href="#line"></use>
+          </svg>
+          <svg class="button-stroke" viewBox="0 0 154 13">
+            <use href="#line"></use>
+          </svg>
+        </a>
+        <a class="btn" href="history.html">History
+          <svg class="button-stroke" viewBox="0 0 154 13">
+            <use href="#line"></use>
+          </svg>
+          <svg class="button-stroke" viewBox="0 0 154 13">
+            <use href="#line"></use>
+          </svg>
+        </a>
+        <a class="btn" href="community.html">Community
+            <svg class="button-stroke" viewBox="0 0 154 13">
+              <use href="#line"></use>
+            </svg>
+            <svg class="button-stroke" viewBox="0 0 154 13">
+              <use href="#line"></use>
+            </svg>
+          </a>
+          <a class="btn" href="gallery.html">Gallery
+            <svg class="button-stroke" viewBox="0 0 154 13">
+              <use href="#line"></use>
+            </svg>
+            <svg class="button-stroke" viewBox="0 0 154 13">
+              <use href="#line"></use>
+            </svg>
+          </a>
+          <a class="btn" href="contact.html">Contact
+            <svg class="button-stroke" viewBox="0 0 154 13">
+              <use href="#line"></use>
+            </svg>
+            <svg class="button-stroke" viewBox="0 0 154 13">
+              <use href="#line"></use>
+            </svg>
+          </a>
+      </div>
+</header> 
 
-    <div class="navbar-container">
-      <a class="btn" href="index.html">Home
-        <svg class="button-stroke" viewBox="0 0 154 13">
-          <use href="#line"></use>
-        </svg>
-        <svg class="button-stroke" viewBox="0 0 154 13">
-          <use href="#line"></use>
-        </svg>
-      </a>
-      <a class="btn" href="models.html">Models
-        <svg class="button-stroke" viewBox="0 0 154 13">
-          <use href="#line"></use>
-        </svg>
-        <svg class="button-stroke" viewBox="0 0 154 13">
-          <use href="#line"></use>
-        </svg>
-      </a>
-      <a class="btn" href="history.html">History
-        <svg class="button-stroke" viewBox="0 0 154 13">
-          <use href="#line"></use>
-        </svg>
-        <svg class="button-stroke" viewBox="0 0 154 13">
-          <use href="#line"></use>
-        </svg>
-      </a>
-      <a class="btn" href="community.html">Community
-        <svg class="button-stroke" viewBox="0 0 154 13">
-          <use href="#line"></use>
-        </svg>
-        <svg class="button-stroke" viewBox="0 0 154 13">
-          <use href="#line"></use>
-        </svg>
-      </a>
-      <a class="btn" href="gallery.html">Gallery
-        <svg class="button-stroke" viewBox="0 0 154 13">
-          <use href="#line"></use>
-        </svg>
-        <svg class="button-stroke" viewBox="0 0 154 13">
-          <use href="#line"></use>
-        </svg>
-      </a>
-      <a class="btn" href="contact.html">Contact
-        <svg class="button-stroke" viewBox="0 0 154 13">
-          <use href="#line"></use>
-        </svg>
-        <svg class="button-stroke" viewBox="0 0 154 13">
-          <use href="#line"></use>
-        </svg>
-      </a>
-    </div>
-  </header>
-
-  <main>
-
-    <body>
-      <h1>BMW Model List</h1>
-      <div id="models-container"></div>
-    </body>
-
+    <main>
 
     <body>
       <section class="models">
         <h1>Latest Ultimate Driving Machines by BMW</h1>
-      </section>
-      <!-- PEN CONTENT -->
-      <div class="content">
-        <div class="content-row">
-          <a href="./cars/Mseries/g81.html">
-            <div class="card m3">
-              <div class="car"></div>
-              <div class="title">
-                <h1>The M3</h1>
-                <p>Touring Competition</p>
-              </div>
-              <div class="spec-container">
-                <div class="transmission">
-                  <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M37 11H34V23H25V11H22V23H13V11H10V37H13V26H22V37H25V26H37V11Z" fill="black"></path>
-                  </svg>
-                  <p>520 hp
-                  <p>
-                </div>
-                <div class="acceleration">
-                  <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M26.9019 25.9623C26.9019 27.3086 25.7821 28.3995 24.4001 28.3995C23.8447 28.3995 23.3364 28.2172 22.9221 27.9189L21.0007 29L20 27.3115L21.9264 26.2284C21.9164 26.1397 21.8984 26.053 21.8984 25.9623C21.8984 24.616 23.0182 23.5251 24.4001 23.5251C24.9555 23.5251 25.4629 23.7074 25.8782 24.0048L32.9993 20L34 21.6885L26.8749 25.6962C26.8839 25.7849 26.9019 25.8716 26.9019 25.9623Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M31.824 11.4898C29.794 10.3108 27.477 9.5828 25 9.4248V12.4248C26.86 12.5718 28.608 13.1178 30.155 13.9868L31.824 11.4898Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M22.9998 9.4248C20.5228 9.5818 18.2058 10.3108 16.1758 11.4888L17.8448 13.9868C19.3928 13.1178 21.1398 12.5718 22.9998 12.4248V9.4248Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M38.7789 19.9609L36.0049 21.1099C36.4029 22.3369 36.6249 23.6419 36.6249 24.9999C36.6249 25.4989 36.5879 25.9889 36.5309 26.4729L39.4739 27.0579C39.5629 26.3829 39.6249 25.6989 39.6249 24.9989C39.6249 23.2339 39.3189 21.5439 38.7789 19.9609Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M33.5957 33.1816L35.7207 35.3066C37.2907 33.5236 38.4537 31.3826 39.0827 29.0186L36.1367 28.4326C35.6357 30.2046 34.7607 31.8176 33.5957 33.1816Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M8.91602 29.0196C9.54502 31.3836 10.708 33.5246 12.278 35.3076L14.403 33.1826C13.238 31.8186 12.363 30.2056 11.861 28.4336L8.91602 29.0196Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M11.375 24.9999C11.375 23.6419 11.596 22.3359 11.995 21.1099L9.221 19.9609C8.681 21.5439 8.375 23.2339 8.375 24.9999C8.375 25.6999 8.437 26.3829 8.526 27.0589L11.469 26.4739C11.412 25.9889 11.375 25.4989 11.375 24.9999Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M35.2334 19.265L38.0104 18.115C36.9414 15.945 35.3884 14.063 33.4864 12.605L31.8164 15.105C33.2334 16.226 34.4014 17.643 35.2334 19.265Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M9.99023 18.114L12.7672 19.264C13.5992 17.642 14.7672 16.225 16.1852 15.103L14.5152 12.603C12.6122 14.063 11.0592 15.944 9.99023 18.114Z"
-                      fill="#262626"></path>
-                  </svg>
-                  <p>0-100 3,6s
-                  <p>
-                </div>
-                <div class="gasoline">
-                  <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M24 6C14.059 6 6 14.059 6 24C6 33.941 14.059 42 24 42C24.107 42 24.211 41.986 24.317 41.984V41.99C27.356 41.99 32.5 40.413 32.5 34.5V24.121C32.5 23.463 32.233 22.819 31.766 22.351L22.035 12.673L20.625 14.091L25.559 19H25.5V26.379C25.5 27.037 25.767 27.681 26.237 28.151L30.5 32.353V34.5C30.5 39.726 25.35 39.99 24.317 39.99V39.984C24.211 39.986 24.107 40 24 40C15.178 40 8 32.822 8 24C8 15.178 15.178 8 24 8C32.822 8 40 15.178 40 24C40 28.871 37.806 33.232 34.361 36.169C34.169 37.415 33.771 38.509 33.205 39.447C38.466 36.306 42 30.573 42 24C42 14.059 33.941 6 24 6ZM27.646 26.732C27.553 26.639 27.5 26.51 27.5 26.378V20.93L30.354 23.768C30.447 23.861 30.5 23.99 30.5 24.122V29.546L27.646 26.732Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M17.1499 29.7778C20.5899 29.7778 22.3109 28.0978 22.3109 24.7398C22.3109 23.0828 21.8919 21.8448 21.0539 21.0298C20.1999 20.1958 18.8979 19.7798 17.1499 19.7798H13.7119V29.7778H17.1499ZM15.8749 21.5158H17.2409C18.0989 21.5158 18.7709 21.7428 19.2549 22.1958C19.8239 22.7308 20.1089 23.5778 20.1089 24.7338C20.1089 25.7618 19.8789 26.5558 19.4169 27.1178C18.9109 27.7348 18.1689 28.0438 17.1889 28.0438H15.8749V21.5158Z"
-                      fill="#262626"></path>
-                  </svg> </svg>
-                  <p>Gasoline
-                  <p>
-                </div>
-              </div>
+    </section> 
+    <!-- PEN CONTENT -->
+    <div class="content">
+      <div class="content-row">
+      <a href="./cars/Mseries/g81.html">
+        <div class="card m3">
+          <div class="car"></div>
+          <div class="title">
+            <h1>The M3</h1>
+            <p>Touring Competition</p>
+          </div>
+          <div class="spec-container">
+            <div class="transmission">
+              <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M37 11H34V23H25V11H22V23H13V11H10V37H13V26H22V37H25V26H37V11Z" fill="black"></path>
+              </svg>
+              <p>520 hp<p>
             </div>
-          </a>
-          <a href="./cars/Mseries/g82.html">
-            <div class="card m4">
-              <div class="logo"></div>
-              <div class="car"></div>
-              <div class="title">
-                <h1>The M4</h1>
-                <p>CSL</p>
-              </div>
-              <div class="spec-container">
-                <div class="transmission">
-                  <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M37 11H34V23H25V11H22V23H13V11H10V37H13V26H22V37H25V26H37V11Z" fill="black"></path>
-                  </svg>
-                  <p>550 hp
-                  <p>
-                </div>
-                <div class="acceleration">
-                  <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M26.9019 25.9623C26.9019 27.3086 25.7821 28.3995 24.4001 28.3995C23.8447 28.3995 23.3364 28.2172 22.9221 27.9189L21.0007 29L20 27.3115L21.9264 26.2284C21.9164 26.1397 21.8984 26.053 21.8984 25.9623C21.8984 24.616 23.0182 23.5251 24.4001 23.5251C24.9555 23.5251 25.4629 23.7074 25.8782 24.0048L32.9993 20L34 21.6885L26.8749 25.6962C26.8839 25.7849 26.9019 25.8716 26.9019 25.9623Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M31.824 11.4898C29.794 10.3108 27.477 9.5828 25 9.4248V12.4248C26.86 12.5718 28.608 13.1178 30.155 13.9868L31.824 11.4898Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M22.9998 9.4248C20.5228 9.5818 18.2058 10.3108 16.1758 11.4888L17.8448 13.9868C19.3928 13.1178 21.1398 12.5718 22.9998 12.4248V9.4248Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M38.7789 19.9609L36.0049 21.1099C36.4029 22.3369 36.6249 23.6419 36.6249 24.9999C36.6249 25.4989 36.5879 25.9889 36.5309 26.4729L39.4739 27.0579C39.5629 26.3829 39.6249 25.6989 39.6249 24.9989C39.6249 23.2339 39.3189 21.5439 38.7789 19.9609Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M33.5957 33.1816L35.7207 35.3066C37.2907 33.5236 38.4537 31.3826 39.0827 29.0186L36.1367 28.4326C35.6357 30.2046 34.7607 31.8176 33.5957 33.1816Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M8.91602 29.0196C9.54502 31.3836 10.708 33.5246 12.278 35.3076L14.403 33.1826C13.238 31.8186 12.363 30.2056 11.861 28.4336L8.91602 29.0196Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M11.375 24.9999C11.375 23.6419 11.596 22.3359 11.995 21.1099L9.221 19.9609C8.681 21.5439 8.375 23.2339 8.375 24.9999C8.375 25.6999 8.437 26.3829 8.526 27.0589L11.469 26.4739C11.412 25.9889 11.375 25.4989 11.375 24.9999Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M35.2334 19.265L38.0104 18.115C36.9414 15.945 35.3884 14.063 33.4864 12.605L31.8164 15.105C33.2334 16.226 34.4014 17.643 35.2334 19.265Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M9.99023 18.114L12.7672 19.264C13.5992 17.642 14.7672 16.225 16.1852 15.103L14.5152 12.603C12.6122 14.063 11.0592 15.944 9.99023 18.114Z"
-                      fill="#262626"></path>
-                  </svg>
-                  <p>0-100 3,7s
-                  <p>
-                </div>
-                <div class="gasoline">
-                  <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M24 6C14.059 6 6 14.059 6 24C6 33.941 14.059 42 24 42C24.107 42 24.211 41.986 24.317 41.984V41.99C27.356 41.99 32.5 40.413 32.5 34.5V24.121C32.5 23.463 32.233 22.819 31.766 22.351L22.035 12.673L20.625 14.091L25.559 19H25.5V26.379C25.5 27.037 25.767 27.681 26.237 28.151L30.5 32.353V34.5C30.5 39.726 25.35 39.99 24.317 39.99V39.984C24.211 39.986 24.107 40 24 40C15.178 40 8 32.822 8 24C8 15.178 15.178 8 24 8C32.822 8 40 15.178 40 24C40 28.871 37.806 33.232 34.361 36.169C34.169 37.415 33.771 38.509 33.205 39.447C38.466 36.306 42 30.573 42 24C42 14.059 33.941 6 24 6ZM27.646 26.732C27.553 26.639 27.5 26.51 27.5 26.378V20.93L30.354 23.768C30.447 23.861 30.5 23.99 30.5 24.122V29.546L27.646 26.732Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M17.1499 29.7778C20.5899 29.7778 22.3109 28.0978 22.3109 24.7398C22.3109 23.0828 21.8919 21.8448 21.0539 21.0298C20.1999 20.1958 18.8979 19.7798 17.1499 19.7798H13.7119V29.7778H17.1499ZM15.8749 21.5158H17.2409C18.0989 21.5158 18.7709 21.7428 19.2549 22.1958C19.8239 22.7308 20.1089 23.5778 20.1089 24.7338C20.1089 25.7618 19.8789 26.5558 19.4169 27.1178C18.9109 27.7348 18.1689 28.0438 17.1889 28.0438H15.8749V21.5158Z"
-                      fill="#262626"></path>
-                  </svg>
-                  <p>Gasoline
-                  <p>
-                </div>
-              </div>
+            <div class="acceleration">
+              <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M26.9019 25.9623C26.9019 27.3086 25.7821 28.3995 24.4001 28.3995C23.8447 28.3995 23.3364 28.2172 22.9221 27.9189L21.0007 29L20 27.3115L21.9264 26.2284C21.9164 26.1397 21.8984 26.053 21.8984 25.9623C21.8984 24.616 23.0182 23.5251 24.4001 23.5251C24.9555 23.5251 25.4629 23.7074 25.8782 24.0048L32.9993 20L34 21.6885L26.8749 25.6962C26.8839 25.7849 26.9019 25.8716 26.9019 25.9623Z" fill="#262626"></path>
+                <path d="M31.824 11.4898C29.794 10.3108 27.477 9.5828 25 9.4248V12.4248C26.86 12.5718 28.608 13.1178 30.155 13.9868L31.824 11.4898Z" fill="#262626"></path>
+                <path d="M22.9998 9.4248C20.5228 9.5818 18.2058 10.3108 16.1758 11.4888L17.8448 13.9868C19.3928 13.1178 21.1398 12.5718 22.9998 12.4248V9.4248Z" fill="#262626"></path>
+                <path d="M38.7789 19.9609L36.0049 21.1099C36.4029 22.3369 36.6249 23.6419 36.6249 24.9999C36.6249 25.4989 36.5879 25.9889 36.5309 26.4729L39.4739 27.0579C39.5629 26.3829 39.6249 25.6989 39.6249 24.9989C39.6249 23.2339 39.3189 21.5439 38.7789 19.9609Z" fill="#262626"></path>
+                <path d="M33.5957 33.1816L35.7207 35.3066C37.2907 33.5236 38.4537 31.3826 39.0827 29.0186L36.1367 28.4326C35.6357 30.2046 34.7607 31.8176 33.5957 33.1816Z" fill="#262626"></path>
+                <path d="M8.91602 29.0196C9.54502 31.3836 10.708 33.5246 12.278 35.3076L14.403 33.1826C13.238 31.8186 12.363 30.2056 11.861 28.4336L8.91602 29.0196Z" fill="#262626"></path>
+                <path d="M11.375 24.9999C11.375 23.6419 11.596 22.3359 11.995 21.1099L9.221 19.9609C8.681 21.5439 8.375 23.2339 8.375 24.9999C8.375 25.6999 8.437 26.3829 8.526 27.0589L11.469 26.4739C11.412 25.9889 11.375 25.4989 11.375 24.9999Z" fill="#262626"></path>
+                <path d="M35.2334 19.265L38.0104 18.115C36.9414 15.945 35.3884 14.063 33.4864 12.605L31.8164 15.105C33.2334 16.226 34.4014 17.643 35.2334 19.265Z" fill="#262626"></path>
+                <path d="M9.99023 18.114L12.7672 19.264C13.5992 17.642 14.7672 16.225 16.1852 15.103L14.5152 12.603C12.6122 14.063 11.0592 15.944 9.99023 18.114Z" fill="#262626"></path>
+              </svg>
+              <p>0-100 3,6s<p>
             </div>
-          </a>
-          <a href="./cars/Mseries/g90.html">
-            <div class="card m5">
-              <div class="logo"></div>
-              <div class="car"></div>
-              <div class="title">
-                <h1>The M5</h1>
-                <p>Sedan</p>
-              </div>
-              <div class="spec-container">
-                <div class="transmission">
-                  <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M37 11H34V23H25V11H22V23H13V11H10V37H13V26H22V37H25V26H37V11Z" fill="black"></path>
-                  </svg>
-                  <p>774 hp
-                  <p>
-                </div>
-                <div class="acceleration">
-                  <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M26.9019 25.9623C26.9019 27.3086 25.7821 28.3995 24.4001 28.3995C23.8447 28.3995 23.3364 28.2172 22.9221 27.9189L21.0007 29L20 27.3115L21.9264 26.2284C21.9164 26.1397 21.8984 26.053 21.8984 25.9623C21.8984 24.616 23.0182 23.5251 24.4001 23.5251C24.9555 23.5251 25.4629 23.7074 25.8782 24.0048L32.9993 20L34 21.6885L26.8749 25.6962C26.8839 25.7849 26.9019 25.8716 26.9019 25.9623Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M31.824 11.4898C29.794 10.3108 27.477 9.5828 25 9.4248V12.4248C26.86 12.5718 28.608 13.1178 30.155 13.9868L31.824 11.4898Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M22.9998 9.4248C20.5228 9.5818 18.2058 10.3108 16.1758 11.4888L17.8448 13.9868C19.3928 13.1178 21.1398 12.5718 22.9998 12.4248V9.4248Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M38.7789 19.9609L36.0049 21.1099C36.4029 22.3369 36.6249 23.6419 36.6249 24.9999C36.6249 25.4989 36.5879 25.9889 36.5309 26.4729L39.4739 27.0579C39.5629 26.3829 39.6249 25.6989 39.6249 24.9989C39.6249 23.2339 39.3189 21.5439 38.7789 19.9609Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M33.5957 33.1816L35.7207 35.3066C37.2907 33.5236 38.4537 31.3826 39.0827 29.0186L36.1367 28.4326C35.6357 30.2046 34.7607 31.8176 33.5957 33.1816Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M8.91602 29.0196C9.54502 31.3836 10.708 33.5246 12.278 35.3076L14.403 33.1826C13.238 31.8186 12.363 30.2056 11.861 28.4336L8.91602 29.0196Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M11.375 24.9999C11.375 23.6419 11.596 22.3359 11.995 21.1099L9.221 19.9609C8.681 21.5439 8.375 23.2339 8.375 24.9999C8.375 25.6999 8.437 26.3829 8.526 27.0589L11.469 26.4739C11.412 25.9889 11.375 25.4989 11.375 24.9999Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M35.2334 19.265L38.0104 18.115C36.9414 15.945 35.3884 14.063 33.4864 12.605L31.8164 15.105C33.2334 16.226 34.4014 17.643 35.2334 19.265Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M9.99023 18.114L12.7672 19.264C13.5992 17.642 14.7672 16.225 16.1852 15.103L14.5152 12.603C12.6122 14.063 11.0592 15.944 9.99023 18.114Z"
-                      fill="#262626"></path>
-                  </svg>
-                  <p>0-100 3,5s
-                  <p>
-                </div>
-                <div class="gasoline">
-                  <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M24 6C14.059 6 6 14.059 6 24C6 33.941 14.059 42 24 42C24.107 42 24.211 41.986 24.317 41.984V41.99C27.356 41.99 32.5 40.413 32.5 34.5V24.121C32.5 23.463 32.233 22.819 31.766 22.351L22.035 12.673L20.625 14.091L25.559 19H25.5V26.379C25.5 27.037 25.767 27.681 26.237 28.151L30.5 32.353V34.5C30.5 39.726 25.35 39.99 24.317 39.99V39.984C24.211 39.986 24.107 40 24 40C15.178 40 8 32.822 8 24C8 15.178 15.178 8 24 8C32.822 8 40 15.178 40 24C40 28.871 37.806 33.232 34.361 36.169C34.169 37.415 33.771 38.509 33.205 39.447C38.466 36.306 42 30.573 42 24C42 14.059 33.941 6 24 6ZM27.646 26.732C27.553 26.639 27.5 26.51 27.5 26.378V20.93L30.354 23.768C30.447 23.861 30.5 23.99 30.5 24.122V29.546L27.646 26.732Z"
-                      fill="#262626"></path>
-                    <path
-                      d="M17.1499 29.7778C20.5899 29.7778 22.3109 28.0978 22.3109 24.7398C22.3109 23.0828 21.8919 21.8448 21.0539 21.0298C20.1999 20.1958 18.8979 19.7798 17.1499 19.7798H13.7119V29.7778H17.1499ZM15.8749 21.5158H17.2409C18.0989 21.5158 18.7709 21.7428 19.2549 22.1958C19.8239 22.7308 20.1089 23.5778 20.1089 24.7338C20.1089 25.7618 19.8789 26.5558 19.4169 27.1178C18.9109 27.7348 18.1689 28.0438 17.1889 28.0438H15.8749V21.5158Z"
-                      fill="#262626"></path>
-                  </svg>
-                  <p>Gasoline
-                  <p>
-                </div>
-              </div>
+            <div class="gasoline">
+              <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 6C14.059 6 6 14.059 6 24C6 33.941 14.059 42 24 42C24.107 42 24.211 41.986 24.317 41.984V41.99C27.356 41.99 32.5 40.413 32.5 34.5V24.121C32.5 23.463 32.233 22.819 31.766 22.351L22.035 12.673L20.625 14.091L25.559 19H25.5V26.379C25.5 27.037 25.767 27.681 26.237 28.151L30.5 32.353V34.5C30.5 39.726 25.35 39.99 24.317 39.99V39.984C24.211 39.986 24.107 40 24 40C15.178 40 8 32.822 8 24C8 15.178 15.178 8 24 8C32.822 8 40 15.178 40 24C40 28.871 37.806 33.232 34.361 36.169C34.169 37.415 33.771 38.509 33.205 39.447C38.466 36.306 42 30.573 42 24C42 14.059 33.941 6 24 6ZM27.646 26.732C27.553 26.639 27.5 26.51 27.5 26.378V20.93L30.354 23.768C30.447 23.861 30.5 23.99 30.5 24.122V29.546L27.646 26.732Z" fill="#262626"></path>
+                <path d="M17.1499 29.7778C20.5899 29.7778 22.3109 28.0978 22.3109 24.7398C22.3109 23.0828 21.8919 21.8448 21.0539 21.0298C20.1999 20.1958 18.8979 19.7798 17.1499 19.7798H13.7119V29.7778H17.1499ZM15.8749 21.5158H17.2409C18.0989 21.5158 18.7709 21.7428 19.2549 22.1958C19.8239 22.7308 20.1089 23.5778 20.1089 24.7338C20.1089 25.7618 19.8789 26.5558 19.4169 27.1178C18.9109 27.7348 18.1689 28.0438 17.1889 28.0438H15.8749V21.5158Z" fill="#262626"></path>
+              </svg>              </svg>
+              <p>Gasoline<p>
             </div>
-          </a>
+          </div>
         </div>
-      </div>
-
-      <section class="models">
-        <h1>Select a BMW Series</h1>
-      </section>
-
-    </body>
-
-    <!-- 1 Series -->
-    <div class="series-section">
-      <h2>1 Series</h2>
-      <div class="model-links">
-        <a href="./cars/1series/e81.html" class="model-item">
-          <img src="./images/1series/e81.png" alt="BMW E81" loading="lazy">
-          <span>E81</span>
+      </a>
+        <a href="./cars/Mseries/g82.html">
+          <div class="card m4">
+            <div class="logo"></div>
+            <div class="car"></div>
+            <div class="title">
+              <h1>The M4</h1>
+              <p>CSL</p>
+            </div>
+            <div class="spec-container">
+              <div class="transmission">
+                <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M37 11H34V23H25V11H22V23H13V11H10V37H13V26H22V37H25V26H37V11Z" fill="black"></path>
+                </svg>
+                <p>550 hp<p>
+              </div>
+              <div class="acceleration">
+                <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M26.9019 25.9623C26.9019 27.3086 25.7821 28.3995 24.4001 28.3995C23.8447 28.3995 23.3364 28.2172 22.9221 27.9189L21.0007 29L20 27.3115L21.9264 26.2284C21.9164 26.1397 21.8984 26.053 21.8984 25.9623C21.8984 24.616 23.0182 23.5251 24.4001 23.5251C24.9555 23.5251 25.4629 23.7074 25.8782 24.0048L32.9993 20L34 21.6885L26.8749 25.6962C26.8839 25.7849 26.9019 25.8716 26.9019 25.9623Z" fill="#262626"></path>
+                  <path d="M31.824 11.4898C29.794 10.3108 27.477 9.5828 25 9.4248V12.4248C26.86 12.5718 28.608 13.1178 30.155 13.9868L31.824 11.4898Z" fill="#262626"></path>
+                  <path d="M22.9998 9.4248C20.5228 9.5818 18.2058 10.3108 16.1758 11.4888L17.8448 13.9868C19.3928 13.1178 21.1398 12.5718 22.9998 12.4248V9.4248Z" fill="#262626"></path>
+                  <path d="M38.7789 19.9609L36.0049 21.1099C36.4029 22.3369 36.6249 23.6419 36.6249 24.9999C36.6249 25.4989 36.5879 25.9889 36.5309 26.4729L39.4739 27.0579C39.5629 26.3829 39.6249 25.6989 39.6249 24.9989C39.6249 23.2339 39.3189 21.5439 38.7789 19.9609Z" fill="#262626"></path>
+                  <path d="M33.5957 33.1816L35.7207 35.3066C37.2907 33.5236 38.4537 31.3826 39.0827 29.0186L36.1367 28.4326C35.6357 30.2046 34.7607 31.8176 33.5957 33.1816Z" fill="#262626"></path>
+                  <path d="M8.91602 29.0196C9.54502 31.3836 10.708 33.5246 12.278 35.3076L14.403 33.1826C13.238 31.8186 12.363 30.2056 11.861 28.4336L8.91602 29.0196Z" fill="#262626"></path>
+                  <path d="M11.375 24.9999C11.375 23.6419 11.596 22.3359 11.995 21.1099L9.221 19.9609C8.681 21.5439 8.375 23.2339 8.375 24.9999C8.375 25.6999 8.437 26.3829 8.526 27.0589L11.469 26.4739C11.412 25.9889 11.375 25.4989 11.375 24.9999Z" fill="#262626"></path>
+                  <path d="M35.2334 19.265L38.0104 18.115C36.9414 15.945 35.3884 14.063 33.4864 12.605L31.8164 15.105C33.2334 16.226 34.4014 17.643 35.2334 19.265Z" fill="#262626"></path>
+                  <path d="M9.99023 18.114L12.7672 19.264C13.5992 17.642 14.7672 16.225 16.1852 15.103L14.5152 12.603C12.6122 14.063 11.0592 15.944 9.99023 18.114Z" fill="#262626"></path>
+                </svg>
+                <p>0-100 3,7s<p>
+              </div>
+              <div class="gasoline">
+                <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 6C14.059 6 6 14.059 6 24C6 33.941 14.059 42 24 42C24.107 42 24.211 41.986 24.317 41.984V41.99C27.356 41.99 32.5 40.413 32.5 34.5V24.121C32.5 23.463 32.233 22.819 31.766 22.351L22.035 12.673L20.625 14.091L25.559 19H25.5V26.379C25.5 27.037 25.767 27.681 26.237 28.151L30.5 32.353V34.5C30.5 39.726 25.35 39.99 24.317 39.99V39.984C24.211 39.986 24.107 40 24 40C15.178 40 8 32.822 8 24C8 15.178 15.178 8 24 8C32.822 8 40 15.178 40 24C40 28.871 37.806 33.232 34.361 36.169C34.169 37.415 33.771 38.509 33.205 39.447C38.466 36.306 42 30.573 42 24C42 14.059 33.941 6 24 6ZM27.646 26.732C27.553 26.639 27.5 26.51 27.5 26.378V20.93L30.354 23.768C30.447 23.861 30.5 23.99 30.5 24.122V29.546L27.646 26.732Z" fill="#262626"></path>
+                  <path d="M17.1499 29.7778C20.5899 29.7778 22.3109 28.0978 22.3109 24.7398C22.3109 23.0828 21.8919 21.8448 21.0539 21.0298C20.1999 20.1958 18.8979 19.7798 17.1499 19.7798H13.7119V29.7778H17.1499ZM15.8749 21.5158H17.2409C18.0989 21.5158 18.7709 21.7428 19.2549 22.1958C19.8239 22.7308 20.1089 23.5778 20.1089 24.7338C20.1089 25.7618 19.8789 26.5558 19.4169 27.1178C18.9109 27.7348 18.1689 28.0438 17.1889 28.0438H15.8749V21.5158Z" fill="#262626"></path>
+                </svg>
+                <p>Gasoline<p>
+              </div>
+            </div>
+          </div>
         </a>
-        <a href="./cars/1series/f20.html" class="model-item">
-          <img src="./images/1series/f20.png" alt="BMW F20" loading="lazy">
-          <span>F20</span>
-        </a>
-        <a href="./cars/1series/f40.html" class="model-item">
-          <img src="./images/1series/f40.png" alt="BMW F40" loading="lazy">
-          <span>F40</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- 2 Series -->
-    <div class="series-section">
-      <h2>2 Series</h2>
-      <div class="model-links">
-        <a href="./cars/2series/f22.html" class="model-item">
-          <img src="./images/2series/f22.png" alt="BMW F22" loading="lazy">
-          <span>F22/23</span>
-        </a>
-        <a href="./cars/2series/g42.html" class="model-item">
-          <img src="./images/2series/g42-front.png" alt="BMW G42" loading="lazy">
-          <span>G42</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- 3 Series -->
-    <div class="series-section">
-      <h2>3 Series</h2>
-      <div class="model-links">
-        <a href="./cars/3series/e21.html" class="model-item">
-          <img src="./images/3series/e21-front.png" alt="BMW E21" loading="lazy">
-          <span>E21</span>
-        </a>
-        <a href="./cars/3series/e30.html" class="model-item">
-          <img src="./images/3series/e30.png" alt="BMW E30" loading="lazy">
-          <span>E30</span>
-        </a>
-        <a href="./cars/3series/e36.html" class="model-item">
-          <img src="./images/3series/e36.png" alt="BMW E36" loading="lazy">
-          <span>E36</span>
-        </a>
-        <a href="./cars/3series/e46.html" class="model-item">
-          <img src="./images/3series/e46.png" alt="BMW E46" loading="lazy">
-          <span>E46</span>
-        </a>
-        <a href="./cars/3series/e9x.html" class="model-item">
-          <img src="./images/3series/e9x.png" alt="BMW E90" loading="lazy">
-          <span>E9x</span>
-        </a>
-        <a href="./cars/3series/f3x.html" class="model-item">
-          <img src="./images/3series/f3x.png" alt="BMW F30" loading="lazy">
-          <span>F3x</span>
-        </a>
-        <a href="./cars/3series/g2x.html" class="model-item">
-          <img src="./images/3series/g2x.png" alt="BMW G20" loading="lazy">
-          <span>G2x</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- 4 Series -->
-    <div class="series-section">
-      <h2>4 Series</h2>
-      <div class="model-links">
-        <a href="./cars/4series/f32.html" class="model-item">
-          <img src="./images/4series/f32.jpg" alt="BMW F32" loading="lazy">
-          <span>F32</span>
-        </a>
-        <a href="./cars/4series/g22.html" class="model-item">
-          <img src="./images/4series/g22.jpg" alt="BMW G22" loading="lazy">
-          <span>G22</span>
+        <a href="./cars/Mseries/g90.html">
+          <div class="card m5">
+            <div class="logo"></div>
+            <div class="car"></div>
+            <div class="title">
+              <h1>The M5</h1>
+              <p>Sedan</p>
+            </div>
+            <div class="spec-container">
+              <div class="transmission">
+                <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M37 11H34V23H25V11H22V23H13V11H10V37H13V26H22V37H25V26H37V11Z" fill="black"></path>
+                </svg>
+                <p>774 hp<p>
+              </div>
+              <div class="acceleration">
+                <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M26.9019 25.9623C26.9019 27.3086 25.7821 28.3995 24.4001 28.3995C23.8447 28.3995 23.3364 28.2172 22.9221 27.9189L21.0007 29L20 27.3115L21.9264 26.2284C21.9164 26.1397 21.8984 26.053 21.8984 25.9623C21.8984 24.616 23.0182 23.5251 24.4001 23.5251C24.9555 23.5251 25.4629 23.7074 25.8782 24.0048L32.9993 20L34 21.6885L26.8749 25.6962C26.8839 25.7849 26.9019 25.8716 26.9019 25.9623Z" fill="#262626"></path>
+                  <path d="M31.824 11.4898C29.794 10.3108 27.477 9.5828 25 9.4248V12.4248C26.86 12.5718 28.608 13.1178 30.155 13.9868L31.824 11.4898Z" fill="#262626"></path>
+                  <path d="M22.9998 9.4248C20.5228 9.5818 18.2058 10.3108 16.1758 11.4888L17.8448 13.9868C19.3928 13.1178 21.1398 12.5718 22.9998 12.4248V9.4248Z" fill="#262626"></path>
+                  <path d="M38.7789 19.9609L36.0049 21.1099C36.4029 22.3369 36.6249 23.6419 36.6249 24.9999C36.6249 25.4989 36.5879 25.9889 36.5309 26.4729L39.4739 27.0579C39.5629 26.3829 39.6249 25.6989 39.6249 24.9989C39.6249 23.2339 39.3189 21.5439 38.7789 19.9609Z" fill="#262626"></path>
+                  <path d="M33.5957 33.1816L35.7207 35.3066C37.2907 33.5236 38.4537 31.3826 39.0827 29.0186L36.1367 28.4326C35.6357 30.2046 34.7607 31.8176 33.5957 33.1816Z" fill="#262626"></path>
+                  <path d="M8.91602 29.0196C9.54502 31.3836 10.708 33.5246 12.278 35.3076L14.403 33.1826C13.238 31.8186 12.363 30.2056 11.861 28.4336L8.91602 29.0196Z" fill="#262626"></path>
+                  <path d="M11.375 24.9999C11.375 23.6419 11.596 22.3359 11.995 21.1099L9.221 19.9609C8.681 21.5439 8.375 23.2339 8.375 24.9999C8.375 25.6999 8.437 26.3829 8.526 27.0589L11.469 26.4739C11.412 25.9889 11.375 25.4989 11.375 24.9999Z" fill="#262626"></path>
+                  <path d="M35.2334 19.265L38.0104 18.115C36.9414 15.945 35.3884 14.063 33.4864 12.605L31.8164 15.105C33.2334 16.226 34.4014 17.643 35.2334 19.265Z" fill="#262626"></path>
+                  <path d="M9.99023 18.114L12.7672 19.264C13.5992 17.642 14.7672 16.225 16.1852 15.103L14.5152 12.603C12.6122 14.063 11.0592 15.944 9.99023 18.114Z" fill="#262626"></path>
+                </svg>
+                <p>0-100 3,5s<p>
+              </div>
+              <div class="gasoline">
+                <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 6C14.059 6 6 14.059 6 24C6 33.941 14.059 42 24 42C24.107 42 24.211 41.986 24.317 41.984V41.99C27.356 41.99 32.5 40.413 32.5 34.5V24.121C32.5 23.463 32.233 22.819 31.766 22.351L22.035 12.673L20.625 14.091L25.559 19H25.5V26.379C25.5 27.037 25.767 27.681 26.237 28.151L30.5 32.353V34.5C30.5 39.726 25.35 39.99 24.317 39.99V39.984C24.211 39.986 24.107 40 24 40C15.178 40 8 32.822 8 24C8 15.178 15.178 8 24 8C32.822 8 40 15.178 40 24C40 28.871 37.806 33.232 34.361 36.169C34.169 37.415 33.771 38.509 33.205 39.447C38.466 36.306 42 30.573 42 24C42 14.059 33.941 6 24 6ZM27.646 26.732C27.553 26.639 27.5 26.51 27.5 26.378V20.93L30.354 23.768C30.447 23.861 30.5 23.99 30.5 24.122V29.546L27.646 26.732Z" fill="#262626"></path>
+                  <path d="M17.1499 29.7778C20.5899 29.7778 22.3109 28.0978 22.3109 24.7398C22.3109 23.0828 21.8919 21.8448 21.0539 21.0298C20.1999 20.1958 18.8979 19.7798 17.1499 19.7798H13.7119V29.7778H17.1499ZM15.8749 21.5158H17.2409C18.0989 21.5158 18.7709 21.7428 19.2549 22.1958C19.8239 22.7308 20.1089 23.5778 20.1089 24.7338C20.1089 25.7618 19.8789 26.5558 19.4169 27.1178C18.9109 27.7348 18.1689 28.0438 17.1889 28.0438H15.8749V21.5158Z" fill="#262626"></path>
+                </svg>
+                <p>Gasoline<p>
+              </div>
+            </div>
+          </div>
         </a>
       </div>
     </div>
 
-    <!-- 5 Series -->
-    <div class="series-section">
-      <h2>5 Series</h2>
-      <div class="model-links">
-        <a href="./cars/5series/e12.html" class="model-item">
-          <img src="./images/5series/e12.png" alt="BMW E12" loading="lazy">
-          <span>E12</span>
-        </a>
-        <a href="./cars/5series/e28.html" class="model-item">
-          <img src="./images/5series/e28.png" alt="BMW E28" loading="lazy">
-          <span>E28</span>
-        </a>
-        <a href="./cars/5series/e34.html" class="model-item">
-          <img src="./images/5series/e34.png" alt="BMW E34" loading="lazy">
-          <span>E34</span>
-        </a>
-        <a href="./cars/5series/e39.html" class="model-item">
-          <img src="./images/5series/e39.png" alt="BMW E39" loading="lazy">
-          <span>E39</span>
-        </a>
-        <a href="./cars/5series/e60.html" class="model-item">
-          <img src="./images/5series/e60.png" alt="BMW E60" loading="lazy">
-          <span>E60</span>
-        </a>
-        <a href="./cars/5series/f10.html" class="model-item">
-          <img src="./images/5series/f10.png" alt="BMW F10" loading="lazy">
-          <span>F10</span>
-        </a>
-        <a href="./cars/5series/g30.html" class="model-item">
-          <img src="./images/5series/g30.png" alt="BMW G30" loading="lazy">
-          <span>G30</span>
-        </a>
-      </div>
-    </div>
+    <section class="models">
+      <h1>Select a BMW Series</h1>
+  </section> 
+  
+  </body>
 
-    <!-- 6 Series -->
-    <div class="series-section">
-      <h2>6 Series</h2>
-      <div class="model-links">
-        <a href="./cars/6series/e24.html" class="model-item">
-          <img src="./images/6series/e24.jpg" alt="BMW E24" loading="lazy">
-          <span>E24</span>
-        </a>
-        <a href="./cars/6series/e63.html" class="model-item">
-          <img src="./images/6series/e63.jpg" alt="BMW E63" loading="lazy">
-          <span>E63</span>
-        </a>
-        <a href="./cars/6series/f12.html" class="model-item">
-          <img src="./images/6series/f12.jpg" alt="BMW F12" loading="lazy">
-          <span>F12</span>
-        </a>
-      </div>
-    </div>
+            <!-- 1 Series -->
+            <div class="series-section">
+                <h2>1 Series</h2>
+                <div class="model-links">
+                    <a href="./cars/1series/e81.html" class="model-item">
+                        <img src="./images/1series/e81.png" alt="BMW E81" loading="lazy">
+                        <span>E81</span>
+                    </a>
+                    <a href="./cars/1series/f20.html" class="model-item">
+                        <img src="./images/1series/f20.png" alt="BMW F20" loading="lazy">
+                        <span>F20</span>
+                    </a>
+                    <a href="./cars/1series/f40.html" class="model-item">
+                        <img src="./images/1series/f40.png" alt="BMW F40" loading="lazy">
+                        <span>F40</span>
+                    </a>
+                </div>
+            </div>
 
-    <!-- 7 Series -->
-    <div class="series-section">
-      <h2>7 Series</h2>
-      <div class="model-links">
-        <a href="./cars/7series/e23.html" class="model-item">
-          <img src="./images/7series/e23.jpg" alt="BMW E23" loading="lazy">
-          <span>E23</span>
-        </a>
-        <a href="./cars/7series/e32.html" class="model-item">
-          <img src="./images/7series/e32.jpg" alt="BMW E32" loading="lazy">
-          <span>E32</span>
-        </a>
-        <a href="./cars/7series/e38.html" class="model-item">
-          <img src="./images/7series/e38.jpg" alt="BMW E38" loading="lazy">
-          <span>E38</span>
-        </a>
-        <a href="./cars/7series/e65.html" class="model-item">
-          <img src="./images/7series/e65.jpg" alt="BMW E65" loading="lazy">
-          <span>E65</span>
-        </a>
-        <a href="./cars/7series/f01.html" class="model-item">
-          <img src="./images/7series/f01.jpg" alt="BMW F01" loading="lazy">
-          <span>F01</span>
-        </a>
-        <a href="./cars/7series/g11.html" class="model-item">
-          <img src="./images/7series/g11.jpg" alt="BMW G11" loading="lazy">
-          <span>G11</span>
-        </a>
-        <a href="./cars/7series/g70.html" class="model-item">
-          <img src="./images/7series/g70.jpg" alt="BMW G70" loading="lazy">
-          <span>G70</span>
-        </a>
-      </div>
-    </div>
+            <!-- 2 Series -->
+            <div class="series-section">
+                <h2>2 Series</h2>
+                <div class="model-links">
+                    <a href="./cars/2series/f22.html" class="model-item">
+                        <img src="./images/2series/f22.png" alt="BMW F22" loading="lazy">
+                        <span>F22/23</span>
+                    </a>
+                    <a href="./cars/2series/g42.html" class="model-item">
+                        <img src="./images/2series/g42-front.png" alt="BMW G42" loading="lazy">
+                        <span>G42</span>
+                    </a>
+                </div>
+            </div>
 
-    <!-- 8 Series -->
-    <div class="series-section">
-      <h2>8 Series</h2>
-      <div class="model-links">
-        <a href="./cars/8series/e31.html" class="model-item">
-          <img src="./images/8series/e31.jpg" alt="BMW E31" loading="lazy">
-          <span>E31</span>
-        </a>
-        <a href="./cars/8series/g15.html" class="model-item">
-          <img src="./images/8series/g15.jpg" alt="BMW G15" loading="lazy">
-          <span>G15</span>
-        </a>
-      </div>
-    </div>
+            <!-- 3 Series -->
+            <div class="series-section">
+                <h2>3 Series</h2>
+                <div class="model-links">
+                    <a href="./cars/3series/e21.html" class="model-item">
+                        <img src="./images/3series/e21-front.png" alt="BMW E21" loading="lazy">
+                        <span>E21</span>
+                    </a>
+                    <a href="./cars/3series/e30.html" class="model-item">
+                        <img src="./images/3series/e30.png" alt="BMW E30" loading="lazy">
+                        <span>E30</span>
+                    </a>
+                    <a href="./cars/3series/e36.html" class="model-item">
+                        <img src="./images/3series/e36.png" alt="BMW E36" loading="lazy">
+                        <span>E36</span>
+                    </a>
+                    <a href="./cars/3series/e46.html" class="model-item">
+                        <img src="./images/3series/e46.png" alt="BMW E46" loading="lazy">
+                        <span>E46</span>
+                    </a>
+                    <a href="./cars/3series/e9x.html" class="model-item">
+                        <img src="./images/3series/e9x.png" alt="BMW E90" loading="lazy">
+                        <span>E9x</span>
+                    </a>
+                    <a href="./cars/3series/f3x.html" class="model-item">
+                        <img src="./images/3series/f3x.png" alt="BMW F30" loading="lazy">
+                        <span>F3x</span>
+                    </a>
+                    <a href="./cars/3series/g2x.html" class="model-item">
+                        <img src="./images/3series/g2x.png" alt="BMW G20" loading="lazy">
+                        <span>G2x</span>
+                    </a>
+                </div>
+            </div>
 
-    <!-- X Series -->
-    <div class="series-section">
-      <h2>X Series</h2>
-      <div class="model-links">
-        <a href="./cars/Xseries/x1.html" class="model-item">
-          <img src="./images/xseries/x1.avif" alt="BMW X1" loading="lazy">
-          <span>X1</span>
-        </a>
-        <a href="./cars/Xseries/x3.html" class="model-item">
-          <img src="./images/xseries/x3.avif" alt="BMW X3" loading="lazy">
-          <span>X3</span>
-        </a>
-        <a href="./cars/Xseries/x5.html" class="model-item">
-          <img src="./images/xseries/x5.jpg" alt="BMW X5" loading="lazy">
-          <span>X5</span>
-        </a>
-        <a href="./cars/Xseries/x6.html" class="model-item">
-          <img src="./images/xseries/x6.jpg" alt="BMW X6" loading="lazy">
-          <span>X6</span>
-        </a>
-        <a href="./cars/Xseries/x7.html" class="model-item">
-          <img src="./images/xseries/x7.jpg" alt="BMW X7" loading="lazy">
-          <span>X7</span>
-        </a>
-      </div>
-    </div>
+            <!-- 4 Series -->
+            <div class="series-section">
+                <h2>4 Series</h2>
+                <div class="model-links">
+                    <a href="./cars/4series/f32.html" class="model-item">
+                        <img src="./images/4series/f32.jpg" alt="BMW F32" loading="lazy">
+                        <span>F32</span>
+                    </a>
+                    <a href="./cars/4series/g22.html" class="model-item">
+                        <img src="./images/4series/g22.jpg" alt="BMW G22" loading="lazy">
+                        <span>G22</span>
+                    </a>
+                </div>
+            </div>
 
-    <!-- Z Series -->
-    <div class="series-section">
-      <h2>Z Series</h2>
-      <div class="model-links">
-        <a href="./cars/Zseries/z3.html" class="model-item">
-          <img src="./images/Zseries/z3.jpg" alt="BMW Z3" loading="lazy">
-          <span>Z3</span>
-        </a>
-        <a href="./cars/Zseries/z4.html" class="model-item">
-          <img src="./images/Zseries/z4.jpg" alt="BMW Z4" loading="lazy">
-          <span>Z4</span>
-        </a>
-        <a href="./cars/Zseries/x8.html" class="model-item">
-          <img src="./images/Zseries/z8.jpg" alt="BMW Z8" loading="lazy">
-          <span>Z8</span>
-        </a>
-      </div>
-    </div>
+            <!-- 5 Series -->
+            <div class="series-section">
+                <h2>5 Series</h2>
+                <div class="model-links">
+                    <a href="./cars/5series/e12.html" class="model-item">
+                        <img src="./images/5series/e12.png" alt="BMW E12" loading="lazy">
+                        <span>E12</span>
+                    </a>
+                    <a href="./cars/5series/e28.html" class="model-item">
+                        <img src="./images/5series/e28.png" alt="BMW E28" loading="lazy">
+                        <span>E28</span>
+                    </a>
+                    <a href="./cars/5series/e34.html" class="model-item">
+                        <img src="./images/5series/e34.png" alt="BMW E34" loading="lazy">
+                        <span>E34</span>
+                    </a>
+                    <a href="./cars/5series/e39.html" class="model-item">
+                        <img src="./images/5series/e39.png" alt="BMW E39" loading="lazy">
+                        <span>E39</span>
+                    </a>
+                    <a href="./cars/5series/e60.html" class="model-item">
+                        <img src="./images/5series/e60.png" alt="BMW E60" loading="lazy">
+                        <span>E60</span>
+                    </a>
+                    <a href="./cars/5series/f10.html" class="model-item">
+                        <img src="./images/5series/f10.png" alt="BMW F10" loading="lazy">
+                        <span>F10</span>
+                    </a>
+                    <a href="./cars/5series/g30.html" class="model-item">
+                        <img src="./images/5series/g30.png" alt="BMW G30" loading="lazy">
+                        <span>G30</span>
+                    </a>
+                </div>
+            </div>
 
-    </section>
-  </main>
+            <!-- 6 Series -->
+            <div class="series-section">
+                <h2>6 Series</h2>
+                <div class="model-links">
+                    <a href="./cars/6series/e24.html" class="model-item">
+                        <img src="./images/6series/e24.jpg" alt="BMW E24" loading="lazy">
+                        <span>E24</span>
+                    </a>
+                    <a href="./cars/6series/e63.html" class="model-item">
+                        <img src="./images/6series/e63.jpg" alt="BMW E63" loading="lazy">
+                        <span>E63</span>
+                    </a>
+                    <a href="./cars/6series/f12.html" class="model-item">
+                        <img src="./images/6series/f12.jpg" alt="BMW F12" loading="lazy">
+                        <span>F12</span>
+                    </a>
+                </div>
+            </div>
 
-  <footer>
-    <p>&copy; 2024 BMW Wiki | All Rights Reserved</p>
-  </footer>
+            <!-- 7 Series -->
+            <div class="series-section">
+                <h2>7 Series</h2>
+                <div class="model-links">
+                    <a href="./cars/7series/e23.html" class="model-item">
+                        <img src="./images/7series/e23.jpg" alt="BMW E23" loading="lazy">
+                        <span>E23</span>
+                    </a>
+                    <a href="./cars/7series/e32.html" class="model-item">
+                        <img src="./images/7series/e32.jpg" alt="BMW E32" loading="lazy">
+                        <span>E32</span>
+                    </a>
+                    <a href="./cars/7series/e38.html" class="model-item">
+                        <img src="./images/7series/e38.jpg" alt="BMW E38" loading="lazy">
+                        <span>E38</span>
+                    </a>
+                    <a href="./cars/7series/e65.html" class="model-item">
+                        <img src="./images/7series/e65.jpg" alt="BMW E65" loading="lazy">
+                        <span>E65</span>
+                    </a>
+                    <a href="./cars/7series/f01.html" class="model-item">
+                        <img src="./images/7series/f01.jpg" alt="BMW F01" loading="lazy">
+                        <span>F01</span>
+                    </a>
+                    <a href="./cars/7series/g11.html" class="model-item">
+                        <img src="./images/7series/g11.jpg" alt="BMW G11" loading="lazy">
+                        <span>G11</span>
+                    </a>
+                    <a href="./cars/7series/g70.html" class="model-item">
+                        <img src="./images/7series/g70.jpg" alt="BMW G70" loading="lazy">
+                        <span>G70</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 8 Series -->
+            <div class="series-section">
+                <h2>8 Series</h2>
+                <div class="model-links">
+                    <a href="./cars/8series/e31.html" class="model-item">
+                        <img src="./images/8series/e31.jpg" alt="BMW E31" loading="lazy">
+                        <span>E31</span>
+                    </a>
+                    <a href="./cars/8series/g15.html" class="model-item">
+                        <img src="./images/8series/g15.jpg" alt="BMW G15" loading="lazy">
+                        <span>G15</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- X Series -->
+            <div class="series-section">
+                <h2>X Series</h2>
+                <div class="model-links">
+                    <a href="./cars/Xseries/x1.html" class="model-item">
+                        <img src="./images/xseries/x1.avif" alt="BMW X1" loading="lazy">
+                        <span>X1</span>
+                    </a>
+                    <a href="./cars/Xseries/x3.html" class="model-item">
+                        <img src="./images/xseries/x3.avif" alt="BMW X3" loading="lazy">
+                        <span>X3</span>
+                    </a>
+                    <a href="./cars/Xseries/x5.html" class="model-item">
+                        <img src="./images/xseries/x5.jpg" alt="BMW X5" loading="lazy">
+                        <span>X5</span>
+                    </a>
+                    <a href="./cars/Xseries/x6.html" class="model-item">
+                        <img src="./images/xseries/x6.jpg" alt="BMW X6" loading="lazy">
+                        <span>X6</span>
+                    </a>
+                    <a href="./cars/Xseries/x7.html" class="model-item">
+                        <img src="./images/xseries/x7.jpg" alt="BMW X7" loading="lazy">
+                        <span>X7</span>
+                    </a>
+                </div>
+            </div>
+             <!-- i Series -->
+             <div class="series-section">
+              <h2>i Series</h2>
+              <div class="model-links">
+                  <a href="./cars/Iseries/bmw330e.html" class="model-item">
+                      <img src="./images/Iseries/bmw330e.WEBP" alt="BMW G2x" loading="lazy">
+                      <span>G2x</span>
+                  </a>
+                  <a href="./cars/Iseries/bmw550e.html" class="model-item">
+                      <img src="./images/Iseries/bmw550e.JPG" alt="BMW G3x" loading="lazy">
+                      <span>G6x</span>
+                  </a>
+                  <a href="./cars/Iseries/bmwi3.html" class="model-item">
+                      <img src="./images/Iseries/bmwi3.WEBP" alt="BMW I3" loading="lazy">
+                      <span>I3</span>
+                  </a>
+                  <a href="./cars/Iseries/bmwi4.html" class="model-item">
+                    <img src="./images/Iseries/bmwi4.JPG" alt="BMW I4" loading="lazy">
+                    <span>G22</span>
+                </a>
+                <a href="./cars/Iseries/bmwi5.html" class="model-item">
+                  <img src="./images/Iseries/bmwi5.JPG" alt="BMW I5" loading="lazy">
+                  <span>G6x</span>
+              </a>
+              <a href="./cars/Iseries/bmwi7.html" class="model-item">
+                <img src="./images/Iseries/bmwi7.JPG" alt="BMW I7" loading="lazy">
+                <span>G70</span>
+            </a>
+            <a href="./cars/Iseries/bmwi8.html" class="model-item">
+              <img src="./images/Iseries/bmwi8.JPG" alt="BMW I8" loading="lazy">
+              <span>i8</span>
+          </a>
+          <a href="./cars/Iseries/bmwix.html" class="model-item">
+            <img src="./images/Iseries/bmwix.JPG" alt="BMW IX" loading="lazy">
+            <span>IX</span>
+        </a>
+        <a href="./cars/Iseries/bmwix1.html" class="model-item">
+          <img src="./images/Iseries/bmwix1.JPG" alt="BMW IX1" loading="lazy">
+          <span>IX1</span>
+      </a>
+      <a href="./cars/Iseries/bmwix2.html" class="model-item">
+        <img src="./images/Iseries/bmwix2(1).JPG" alt="BMW IX2" loading="lazy">
+        <span>IX2</span>
+    </a>
+    <a href="./cars/Iseries/bmwx5e.html" class="model-item">
+      <img src="./images/Iseries/bmwx5_50e.JPG" alt="BMW X5e" loading="lazy">
+      <span>X5e</span>
+  </a>
+  <a href="./cars/Iseries/bmwxm.html" class="model-item">
+    <img src="./images/Iseries/bmwxm.WEBP" alt="BMW XM" loading="lazy">
+    <span>XM</span>
+
+</a>
+              </div>
+          </div>
+
+            <!-- Z Series -->
+            <div class="series-section">
+                <h2>Z Series</h2>
+                <div class="model-links">
+                    <a href="./cars/Zseries/z3.html" class="model-item">
+                        <img src="./images/Zseries/z3.jpg" alt="BMW Z3" loading="lazy">
+                        <span>Z3</span>
+                    </a>
+                    <a href="./cars/Zseries/z4.html" class="model-item">
+                        <img src="./images/Zseries/z4.jpg" alt="BMW Z4" loading="lazy">
+                        <span>Z4</span>
+                    </a>
+                    <a href="./cars/Zseries/x8.html" class="model-item">
+                        <img src="./images/Zseries/z8.jpg" alt="BMW Z8" loading="lazy">
+                        <span>Z8</span>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 BMW Wiki | All Rights Reserved</p>
+    </footer>
 </body>
-
 </html>
